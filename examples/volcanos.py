@@ -66,6 +66,7 @@ app.layout = html.Div([
     ]
 )
 def update_output(volcano_type, volcano_rock, time):
+    print(f"Hello there!! {volcano_rock}")
     mydata = data
     if volcano_type != 'all':
         mydata = data[data['primary_volcano_type'] == volcano_type]

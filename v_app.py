@@ -110,6 +110,7 @@ b_style = {
 
 
 app.layout = html.Div([
+    
                  html.Button('Reset map', id='reset', n_clicks=0, style=b_style),
                  html.H1(children="Red Hot Chilly Peppers - Tours",
                          style = {'textAlign':'center', 'font-family' : 'Roboto'}),

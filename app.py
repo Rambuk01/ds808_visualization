@@ -172,7 +172,7 @@ app.layout = html.Div([
         #Input(component_id='reset', component_property='n_clicks'),
     ]
 )
-def update_output(room_types):
+def generate_map(room_types):
     mydata = data
     if room_types != 'all':
         mydata = mydata[mydata['room_type'] == room_types]
@@ -208,7 +208,7 @@ def update_output(room_types):
                         #size="count",
                         #color="count", # Fucking idiot package. Doesnt update correctly unless you add colors...
                         #size_max=15,
-                        zoom=11,
+                        zoom=12,
                         height=1100,
                         mapbox_style="open-street-map")
     fig.update_layout(margin={"r":0,"t":0,"l":20,"b":0})

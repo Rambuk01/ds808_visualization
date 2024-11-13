@@ -44,6 +44,17 @@ b_style = {
     'background-color': 'lightblue',
     }
 
+## 2 Maps - scatter and area - area is standard
+
+## Dropdown choices
+## Beds, Bedrooms, Room type, Bathrooms
+
+## Violin plots
+# price vs. seasons
+
+# How often do we get rent out? Cant be answered.
+
+
 app.layout = html.Div([
     html.H1(children="Airbnb - Copenhagen",
             style = {'textAlign':'center', 'font-family' : 'Roboto'}),
@@ -57,7 +68,7 @@ app.layout = html.Div([
         html.Div(
             dcc.Graph(id='cph-map'),
             style={'width':'100%','display':'inline-block','vertical-align':'top','margin':'8px 0px', 'padding':'0px'}),
-    ]),
+        ]),
     html.H1("Copenhagen GeoJSON Map", style={'textAlign': 'center'}),
     dcc.Graph(id='geojson-map')
 ])
@@ -72,46 +83,24 @@ app.layout = html.Div([
     ]
 )
 def generate_map(room_types):
-    mydata = data
+    ndata = data
     if room_types != 'all':
-        mydata = mydata[mydata['room_type'] == room_types]
+        ndata = ndata[ndata['room_type'] == room_types]
     
     fig = px.scatter_mapbox(
-                        data_frame=mydata,
+                        data_frame=ndata,
                         title=f"Airbnb Listings - {room_types}" if room_types != "all" else "Airbnb Listings - All Room Types",
                         lat="latitude",
                         lon="longitude",
                         #hover_name="id",
                         hover_data=["neighbourhood_cleansed"],
-                        #size="count",
-                        #color="count",
+                        size="price",
+                        color="price",
                         #size_max=15,
                         zoom=12,
                         height=1100,
                         mapbox_style="open-street-map")
     
-    # Generate the heatmap
-    fig = px.density_mapbox(
-        data_frame=mydata,
-        lat="latitude",
-        lon="longitude",
-        z=None,  # You can specify a numeric column here if you want intensity based on a variable
-        radius=5,  # Adjust this for heatmap spread
-        center=dict(lat=55.6761, lon=12.5683),  # Center on Copenhagen coordinates
-        zoom=11,
-        height=800,
-        mapbox_style="open-street-map",
-        title=f"Heatmap of Airbnb Listings - {room_types}" if room_types != "all" else "Heatmap of Airbnb Listings - All Room Types",
-        
-        # color_continuous_scale=[
-        #     "rgba(255, 255, 178, 0.1)",  # Light yellow with low opacity
-        #     "rgba(254, 204, 92, 0.4)",   # Yellow with medium opacity
-        #     "rgba(253, 141, 60, 0.6)",   # Orange with higher opacity
-        #     "rgba(240, 59, 32, 0.8)",    # Red with higher opacity
-        #     "rgba(189, 0, 38, 1.0)"      # Dark red with full opacity
-        # ]
-    )
-
     fig.update_layout(margin={"r":0,"t":0,"l":20,"b":0})
     
     return [fig]
@@ -135,7 +124,6 @@ def display_geojson(_, room_types):
     # We create a dummy DataFrame with a column to match the GeoJSON 'properties' key
     legend_data = {
         "bydel_nr": [feature["properties"]["bydel_nr"] for feature in geojson_data["features"]],
-        "dummy_color": [5] * len(geojson_data["features"]),  # Same value for all regions
         "area_name": [feature["properties"]["navn"] for feature in geojson_data["features"]],  # Add area names
     }
 
@@ -154,6 +142,7 @@ def display_geojson(_, room_types):
         center={"lat": 55.6761, "lon": 12.5683},
         opacity=0.5,
         height=800,
+        
     )
 
     # Enable scroll zoom and set margins

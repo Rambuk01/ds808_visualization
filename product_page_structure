@@ -1,0 +1,12 @@
+// Single Product Page Structure
+digraph {
+	SPW [label="single-product-wrapper"]
+	PC [label="product-container"]
+	FPI [label="featured-product-image"]
+	PCNT [label="product-content"]
+	T [label=title]
+	SPW -> PC
+	PC -> FPI
+	PC -> PCNT
+	PCNT -> T
+}

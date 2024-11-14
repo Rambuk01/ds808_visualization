@@ -22,7 +22,7 @@ import json
 app = dash.Dash(__name__)
 data = pd.read_csv('archive/listings_cleaned.csv', sep=',', encoding='utf-8')
 
-# Load the GeoJSON file # https://www.opendata.dk/city-of-copenhagen/kvarter
+# Load the GeoJSON file # https://www.opendata.dk/city-of-copenhagen/bydele
 with open('archive/cph_fred_dist.geojson') as f:
     geojson_data = json.load(f)
 
@@ -142,7 +142,20 @@ def display_geojson(_, room_types):
         center={"lat": 55.6761, "lon": 12.5683},
         opacity=0.5,
         height=800,
-        
+        # color_continuous_scale=[
+        #     [0, "#edf8e9"],   # Very light green
+        #     [0.25, "#bae4b3"], # Light-medium green
+        #     [0.5, "#74c476"], # Medium green
+        #     [0.75, "#31a354"], # Dark-medium green
+        #     [1, "#006d2c"]    # Dark green
+        # ],
+        color_continuous_scale=[
+            [0, "#eff3ff"],   # Very light blue
+            [0.25, "#bdd7e7"], # Light-medium blue
+            [0.5, "#6baed6"], # Medium blue
+            [0.75, "#3182bd"], # Dark-medium blue
+            [1, "#08519c"]    # Dark blue
+        ]
     )
 
     # Enable scroll zoom and set margins

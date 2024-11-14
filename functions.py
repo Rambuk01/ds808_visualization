@@ -6,8 +6,14 @@ import pandas as pd
 }
 
 
-def get_mean_prices(df: pd.DataFrame, legend_data: dict):
+def get_mean_prices(df: pd.DataFrame, geojson_data):
     
+    # We create a dummy DataFrame with a column to match the GeoJSON 'properties' key
+    legend_data = {
+        "bydel_nr": [feature["properties"]["bydel_nr"] for feature in geojson_data["features"]],
+        "area_name": [feature["properties"]["navn"] for feature in geojson_data["features"]],  # Add area names
+    }
+
     # We create a new dataframe, grouped by neighbourhood_cleansed, with the mean of the prices in the neighbourhoods.
     df_price = df.groupby('neighbourhood_cleansed').agg({
         'price': 'mean',

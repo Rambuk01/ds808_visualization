@@ -64,6 +64,17 @@ app.layout = html.Div([
         options=type_options,
         value='all'
     )),
+    html.Div(
+        dcc.Dropdown(
+            id='map-type',
+            options=[
+                {'label': 'Choropleth Map', 'value': 'choropleth'},
+                {'label': 'Scatter Mapbox', 'value': 'scatter'}
+            ],
+            value='choropleth',  # Default map type
+            clearable=False
+        ),
+    ),
     html.Div([
         html.Div(
             dcc.Graph(id='cph-map'),
@@ -121,13 +132,9 @@ def display_geojson(_, room_types):
     
         
 
-    # We create a dummy DataFrame with a column to match the GeoJSON 'properties' key
-    legend_data = {
-        "bydel_nr": [feature["properties"]["bydel_nr"] for feature in geojson_data["features"]],
-        "area_name": [feature["properties"]["navn"] for feature in geojson_data["features"]],  # Add area names
-    }
+    
 
-    df_mean_prices = functions.get_mean_prices(ndata, legend_data)
+    df_mean_prices = functions.get_mean_prices(ndata, geojson_data)
 
     # Create a basic map using the GeoJSON data
     fig = px.choropleth_mapbox(

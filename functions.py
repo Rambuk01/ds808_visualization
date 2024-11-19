@@ -31,5 +31,4 @@ def get_mean_prices(df: pd.DataFrame, geojson_data):
 
     # We add the index column, so 'neighbourhood_cleansed' becomes a normal column
     df_price.reset_index(inplace=True)
-    print(df_price)
     return df_price

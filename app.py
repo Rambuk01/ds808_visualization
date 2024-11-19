@@ -15,8 +15,11 @@ import plotly.express as px
 import random
 import plotly.graph_objs as go
 import json
+import html_builder
 
 
+bg_color = "#171B33"
+font_color = '#9fa6b7'
 
 """ INITIATE """
 app = dash.Dash(__name__)
@@ -32,17 +35,6 @@ type_options = [{'label': i, 'value': i} for i in types]
 type_options.append({'label': 'Any room type', 'value': 'all'})
 # Convert date column to datetimes. Then convert them to year strings.
 
-b_style = {
-    'position': 'fixed', 
-    'top': '25px', 
-    'right': '50px', 
-    'z-index':'100',
-    'padding': '10px 30px',
-    'border': '1px solid black',
-    'border-radius': '5px',
-    'box-shadow': 'rgba(0, 0, 0, 0.35) 0px 5px 15px',
-    'background-color': 'lightblue',
-    }
 
 ## 2 Maps - scatter and area - area is standard
 
@@ -54,33 +46,85 @@ b_style = {
 
 # How often do we get rent out? Cant be answered.
 
-
-app.layout = html.Div([
-    html.H1(children="Airbnb - Copenhagen",
-            style = {'textAlign':'center', 'font-family' : 'Roboto'}),
-    
-    html.Div(dcc.Dropdown(
-        id='room_types',
-        options=type_options,
-        value='all'
-    )),
-    html.Div(
-        dcc.Dropdown(
-            id='map-type',
-            options=[
-                {'label': 'Choropleth Map', 'value': 'choropleth'},
-                {'label': 'Scatter Mapbox', 'value': 'scatter'}
-            ],
-            value='choropleth',  # Default map type
-            clearable=False
-        ),
-    ),
-    
-    html.Div([
+map_html = html.Div(
+    className = 'map-container',
+    children=[
+        #html.H2(children="Map"),
         html.Div(
             dcc.Graph(id='cph-map'),
-            style={'width':'100%','display':'inline-block','vertical-align':'top','margin':'8px 0px', 'padding':'0px'}),
+        ),
+    ]
+)
+
+dropdown_map_type = dcc.Dropdown(
+                id='map-type',
+                options=[
+                    {'label': 'Choropleth Map', 'value': 'choropleth'},
+                    {'label': 'Scatter Mapbox', 'value': 'scatter'},
+                ],
+                value='choropleth',  # Default map type
+                clearable=False,
+            )
+
+dropdown_room_type = dcc.Dropdown(
+            id='room_types',
+            options=type_options,
+            value='all'
+        )
+
+dropdowns = html.Div(
+            className="dropdowns w100",
+            children= [
+                html.H2(children="Dropdowns"),
+                html.Div(className = 'flex flex-space-around', children=[
+                    html.Div(
+                        className="dropdown w50 m1",
+                        children=dropdown_room_type,
+                    ),
+                    html.Div(
+                        className='dropdown w50 m1',
+                        children=dropdown_map_type,
+                    ),
+                ]),
+            ]
+        )
+sidebar_wrapper = html.Div(
+    className = 'sidebar-container w25 p1 box-shadow',
+    children=[
+        dropdowns
+    ]
+)
+
+info_right = html.Div(className='info-right', children=[
+    html.H1(className='header', children="Info right")
+])
+info_bottom = html.Div(className='info-bottom', children=[
+
+])
+
+content_wrapper = html.Div(
+    className = 'content-wrapper w100',
+    children=[
+        
+        html.H1(className='header none',children="Airbnb - Copenhagen"),
+        html.Div(className='top-content flex flex-space-evenly', children=[
+            html.Div(className='map-wrapper bd w100 m1 p1 bgw box-shadow' ,children=[
+                map_html,
+            ]),
+            html.Div(className='info-right-wrapper bd w50 m1 p1 bgw box-shadow', children=[
+                info_right,
+            ]),
         ]),
+        html.Div(className='info-bottom-wrapper bd m1 p1 h bgw box-shadow', children=[
+            info_bottom,
+        ])
+        
+    ]
+)
+
+app.layout = html.Div(className='page flex flex-space-around', children=[
+    sidebar_wrapper,
+    content_wrapper
 ])
 
 """ MAP """

@@ -75,7 +75,7 @@ dropdown_room_type = dcc.Dropdown(
 dropdowns = html.Div(
             className="dropdowns w100",
             children= [
-                html.H2(children="Dropdowns"),
+                html.H1(children="Airbnb - Copenhagen"),
                 html.Div(className = 'flex flex-space-around', children=[
                     html.Div(
                         className="dropdown w50 m1",

@@ -32,3 +32,29 @@ def get_mean_prices(df: pd.DataFrame, geojson_data):
     # We add the index column, so 'neighbourhood_cleansed' becomes a normal column
     df_price.reset_index(inplace=True)
     return df_price
+
+
+def handle_outliers(df, price_column='price', extreme_threshold=10000, cap_threshold=6000):
+    """
+    Handles outliers in the dataset by filtering and capping prices.
+    
+    Parameters:
+    - df (pd.DataFrame): The input dataframe.
+    - price_column (str): The column name for prices.
+    - extreme_threshold (float): The maximum price to keep in the dataset.
+    - cap_threshold (float): The price cap for remaining data.
+
+    Returns:
+    - pd.DataFrame: The dataframe with outliers handled.
+    """
+
+
+    # Step 1: Filter out extreme outliers
+    filtered_df = df[df[price_column] <= extreme_threshold]
+
+    # Step 2: Cap remaining prices at the threshold
+    filtered_df[price_column] = filtered_df[price_column].clip(upper=cap_threshold)
+
+    # Step 3: Remove listeings with a price of 0
+    filtered_df = filtered_df[filtered_df[price_column] > 100]
+    return filtered_df

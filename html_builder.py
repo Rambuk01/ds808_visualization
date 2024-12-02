@@ -9,7 +9,8 @@ from plotly.colors import n_colors
 
 ## GENERAL SETTINGS ##
 map_height = 455;
-
+plot_bgcolor="rgba(50, 50, 50, 1)" # Background of the plotting area
+paper_bgcolor="rgba(255, 255, 255, 1)" # Background of the entire figure
 # Define the list of month names
     # Define category names
 month_names = [
@@ -107,3 +108,13 @@ def get_dropdowns(dropdown_options: dict):
     )
 
     return dropdowns
+
+def get_sunburst_and_piechart():
+    chart = html.Div(
+        className='sun_pie',
+        children=[
+            dcc.Graph(id="sunburst-chart"),
+        ]
+    )
+
+    return chart

@@ -30,8 +30,15 @@ html, body {
     /*style = {'textAlign':'center', 'font-family' : 'Roboto'}*/
     text-align: center;
 }
-.map-container {
 
+.info-right-wrapper {
+    transform-origin: top right; /* Anchor the scaling at the top center */
+    transition: transform 0.3s ease-in-out; /* Smooth transition for the transform property */
+    z-index: 1000;
+}
+
+.info-right-wrapper:hover {
+    transform: scale(2); /* Apply scale transformation on hover */
 }
 
 /* GENERAL SETTINGS */

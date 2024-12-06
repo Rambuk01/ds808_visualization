@@ -141,3 +141,7 @@ h2 {
     text-align:'left'; 
     font-family: 'Roboto';
 }
+
+#avg-price, #count {
+    font-weight: bold;
+}

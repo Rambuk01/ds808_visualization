@@ -154,6 +154,13 @@ def generate_map(room_types, map_type, click_data, selected_data):
     if room_types != 'all':
         ndata = ndata[ndata['room_type'] == room_types]
     
+    # Default selected points
+    selected_indices = []
+
+    # If lasso selection is made, extract indices
+    if selected_data:
+        selected_indices = [point['pointIndex'] for point in selected_data['points']]
+    
     if map_type != 'choropleth':
         fig = px.scatter_mapbox(
             data_frame=ndata,
@@ -174,6 +181,21 @@ def generate_map(room_types, map_type, click_data, selected_data):
             height=map_height,
             mapbox_style="open-street-map"
         )
+        if selected_data:
+            # Apply selectedpoints to highlight selected indices
+            fig.update_traces(
+                selectedpoints=selected_indices,  # Highlight the selected points
+                marker=dict(
+                    opacity=0.6,  # Decrease opacity for unselected points
+                    #size=10
+                ),
+                selected=dict(
+                    marker=dict(
+                        opacity=1.0,  # Full opacity for selected points
+                        #size=15       # Larger size for selected points
+                    )
+                )
+            )
     
     if(map_type == 'choropleth'):
         df_mean_prices = functions.get_mean_prices(ndata, geojson_data)

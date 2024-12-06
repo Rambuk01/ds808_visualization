@@ -1,0 +1,3038 @@
+{
+    "points": [
+        {
+            "curveNumber": 0,
+            "pointNumber": 11,
+            "pointIndex": 11,
+            "lon": 12.56325,
+            "lat": 55.68292,
+            "cluster.color": 1000,
+            "marker.size": 1000,
+            "marker.color": 1000,
+            "customdata": [
+                "Indre By",
+                677453
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 14,
+            "pointIndex": 14,
+            "lon": 12.56543,
+            "lat": 55.68547,
+            "cluster.color": 2682,
+            "marker.size": 2682,
+            "marker.color": 2682,
+            "customdata": [
+                "Indre By",
+                37159
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 33,
+            "pointIndex": 33,
+            "lon": 12.56687,
+            "lat": 55.68384,
+            "cluster.color": 1406,
+            "marker.size": 1406,
+            "marker.color": 1406,
+            "customdata": [
+                "Indre By",
+                78381
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 42,
+            "pointIndex": 42,
+            "lon": 12.56225,
+            "lat": 55.68313,
+            "cluster.color": 1406,
+            "marker.size": 1406,
+            "marker.color": 1406,
+            "customdata": [
+                "Indre By",
+                118649
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 76,
+            "pointIndex": 76,
+            "lon": 12.56529,
+            "lat": 55.68355,
+            "cluster.color": 1700,
+            "marker.size": 1700,
+            "marker.color": 1700,
+            "customdata": [
+                "Indre By",
+                758899
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 118,
+            "pointIndex": 118,
+            "lon": 12.56375,
+            "lat": 55.68187,
+            "cluster.color": 500,
+            "marker.size": 500,
+            "marker.color": 500,
+            "customdata": [
+                "Indre By",
+                268089
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 231,
+            "pointIndex": 231,
+            "lon": 12.56157,
+            "lat": 55.68125,
+            "cluster.color": 4500,
+            "marker.size": 4500,
+            "marker.color": 4500,
+            "customdata": [
+                "Indre By",
+                928173
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 234,
+            "pointIndex": 234,
+            "lon": 12.56456,
+            "lat": 55.68441,
+            "cluster.color": 1042,
+            "marker.size": 1042,
+            "marker.color": 1042,
+            "customdata": [
+                "Indre By",
+                933497
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 272,
+            "pointIndex": 272,
+            "lon": 12.56774,
+            "lat": 55.68579,
+            "cluster.color": 1100,
+            "marker.size": 1100,
+            "marker.color": 1100,
+            "customdata": [
+                "Indre By",
+                1127193
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 285,
+            "pointIndex": 285,
+            "lon": 12.56612,
+            "lat": 55.68321,
+            "cluster.color": 1339,
+            "marker.size": 1339,
+            "marker.color": 1339,
+            "customdata": [
+                "Indre By",
+                1291702
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 388,
+            "pointIndex": 388,
+            "lon": 12.5607,
+            "lat": 55.68445,
+            "cluster.color": 800,
+            "marker.size": 800,
+            "marker.color": 800,
+            "customdata": [
+                "Indre By",
+                1360569
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 433,
+            "pointIndex": 433,
+            "lon": 12.56657,
+            "lat": 55.68551,
+            "cluster.color": 1042,
+            "marker.size": 1042,
+            "marker.color": 1042,
+            "customdata": [
+                "Indre By",
+                1083039
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 447,
+            "pointIndex": 447,
+            "lon": 12.56424,
+            "lat": 55.68398,
+            "cluster.color": 1476,
+            "marker.size": 1476,
+            "marker.color": 1476,
+            "customdata": [
+                "Indre By",
+                1461479
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 515,
+            "pointIndex": 515,
+            "lon": 12.563674,
+            "lat": 55.680222,
+            "cluster.color": 12143,
+            "marker.size": 12143,
+            "marker.color": 12143,
+            "customdata": [
+                "Indre By",
+                2360896
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 551,
+            "pointIndex": 551,
+            "lon": 12.56424,
+            "lat": 55.68396,
+            "cluster.color": 1100,
+            "marker.size": 1100,
+            "marker.color": 1100,
+            "customdata": [
+                "Indre By",
+                2403754
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 561,
+            "pointIndex": 561,
+            "lon": 12.56666,
+            "lat": 55.68339,
+            "cluster.color": 908,
+            "marker.size": 908,
+            "marker.color": 908,
+            "customdata": [
+                "Indre By",
+                2082645
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 618,
+            "pointIndex": 618,
+            "lon": 12.56286,
+            "lat": 55.6828,
+            "cluster.color": 3000,
+            "marker.size": 3000,
+            "marker.color": 3000,
+            "customdata": [
+                "Indre By",
+                1813810
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 627,
+            "pointIndex": 627,
+            "lon": 12.56666,
+            "lat": 55.68386,
+            "cluster.color": 955,
+            "marker.size": 955,
+            "marker.color": 955,
+            "customdata": [
+                "Indre By",
+                1834010
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 643,
+            "pointIndex": 643,
+            "lon": 12.56252,
+            "lat": 55.68097,
+            "cluster.color": 2500,
+            "marker.size": 2500,
+            "marker.color": 2500,
+            "customdata": [
+                "Indre By",
+                1859139
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 656,
+            "pointIndex": 656,
+            "lon": 12.56707,
+            "lat": 55.68441,
+            "cluster.color": 960,
+            "marker.size": 960,
+            "marker.color": 960,
+            "customdata": [
+                "Indre By",
+                1874207
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 660,
+            "pointIndex": 660,
+            "lon": 12.56416,
+            "lat": 55.68373,
+            "cluster.color": 800,
+            "marker.size": 800,
+            "marker.color": 800,
+            "customdata": [
+                "Indre By",
+                2938453
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 799,
+            "pointIndex": 799,
+            "lon": 12.56295,
+            "lat": 55.68148,
+            "cluster.color": 564,
+            "marker.size": 564,
+            "marker.color": 564,
+            "customdata": [
+                "Indre By",
+                3382865
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 839,
+            "pointIndex": 839,
+            "lon": 12.5635,
+            "lat": 55.68387,
+            "cluster.color": 1100,
+            "marker.size": 1100,
+            "marker.color": 1100,
+            "customdata": [
+                "Indre By",
+                3413345
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 876,
+            "pointIndex": 876,
+            "lon": 12.5659,
+            "lat": 55.68319,
+            "cluster.color": 900,
+            "marker.size": 900,
+            "marker.color": 900,
+            "customdata": [
+                "Indre By",
+                3575920
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 901,
+            "pointIndex": 901,
+            "lon": 12.56227,
+            "lat": 55.68087,
+            "cluster.color": 1150,
+            "marker.size": 1150,
+            "marker.color": 1150,
+            "customdata": [
+                "Indre By",
+                3592268
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 950,
+            "pointIndex": 950,
+            "lon": 12.56379,
+            "lat": 55.68275,
+            "cluster.color": 900,
+            "marker.size": 900,
+            "marker.color": 900,
+            "customdata": [
+                "Indre By",
+                3530490
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 956,
+            "pointIndex": 956,
+            "lon": 12.56274,
+            "lat": 55.67954,
+            "cluster.color": 14286,
+            "marker.size": 14286,
+            "marker.color": 14286,
+            "customdata": [
+                "Indre By",
+                3545890
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 1019,
+            "pointIndex": 1019,
+            "lon": 12.56283,
+            "lat": 55.67983,
+            "cluster.color": 1298,
+            "marker.size": 1298,
+            "marker.color": 1298,
+            "customdata": [
+                "Indre By",
+                3789739
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 1032,
+            "pointIndex": 1032,
+            "lon": 12.56276,
+            "lat": 55.68201,
+            "cluster.color": 978,
+            "marker.size": 978,
+            "marker.color": 978,
+            "customdata": [
+                "Indre By",
+                4255597
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 1058,
+            "pointIndex": 1058,
+            "lon": 12.56644,
+            "lat": 55.68341,
+            "cluster.color": 2500,
+            "marker.size": 2500,
+            "marker.color": 2500,
+            "customdata": [
+                "Indre By",
+                4285444
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 1078,
+            "pointIndex": 1078,
+            "lon": 12.56326,
+            "lat": 55.68465,
+            "cluster.color": 1934,
+            "marker.size": 1934,
+            "marker.color": 1934,
+            "customdata": [
+                "Indre By",
+                4318510
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 1152,
+            "pointIndex": 1152,
+            "lon": 12.56766,
+            "lat": 55.6851,
+            "cluster.color": 1800,
+            "marker.size": 1800,
+            "marker.color": 1800,
+            "customdata": [
+                "Indre By",
+                5361544
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 1174,
+            "pointIndex": 1174,
+            "lon": 12.56545,
+            "lat": 55.6826,
+            "cluster.color": 1274,
+            "marker.size": 1274,
+            "marker.color": 1274,
+            "customdata": [
+                "Indre By",
+                4986269
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 1178,
+            "pointIndex": 1178,
+            "lon": 12.56399,
+            "lat": 55.68396,
+            "cluster.color": 800,
+            "marker.size": 800,
+            "marker.color": 800,
+            "customdata": [
+                "Indre By",
+                5438156
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 1193,
+            "pointIndex": 1193,
+            "lon": 12.56827,
+            "lat": 55.68553,
+            "cluster.color": 779,
+            "marker.size": 779,
+            "marker.color": 779,
+            "customdata": [
+                "Indre By",
+                5459872
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 1283,
+            "pointIndex": 1283,
+            "lon": 12.56345,
+            "lat": 55.68181,
+            "cluster.color": 2500,
+            "marker.size": 2500,
+            "marker.color": 2500,
+            "customdata": [
+                "Indre By",
+                6118268
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 1334,
+            "pointIndex": 1334,
+            "lon": 12.56225,
+            "lat": 55.68178,
+            "cluster.color": 2000,
+            "marker.size": 2000,
+            "marker.color": 2000,
+            "customdata": [
+                "Indre By",
+                6175735
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 1387,
+            "pointIndex": 1387,
+            "lon": 12.56364,
+            "lat": 55.67996,
+            "cluster.color": 2214,
+            "marker.size": 2214,
+            "marker.color": 2214,
+            "customdata": [
+                "Indre By",
+                6315899
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 1401,
+            "pointIndex": 1401,
+            "lon": 12.5635,
+            "lat": 55.68254,
+            "cluster.color": 1800,
+            "marker.size": 1800,
+            "marker.color": 1800,
+            "customdata": [
+                "Indre By",
+                6586974
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 1491,
+            "pointIndex": 1491,
+            "lon": 12.56448,
+            "lat": 55.68498,
+            "cluster.color": 2057,
+            "marker.size": 2057,
+            "marker.color": 2057,
+            "customdata": [
+                "Indre By",
+                6780532
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 1522,
+            "pointIndex": 1522,
+            "lon": 12.56499,
+            "lat": 55.68417,
+            "cluster.color": 2071,
+            "marker.size": 2071,
+            "marker.color": 2071,
+            "customdata": [
+                "Indre By",
+                6815724
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 1625,
+            "pointIndex": 1625,
+            "lon": 12.56798,
+            "lat": 55.68508,
+            "cluster.color": 1886,
+            "marker.size": 1886,
+            "marker.color": 1886,
+            "customdata": [
+                "Indre By",
+                7003446
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 1628,
+            "pointIndex": 1628,
+            "lon": 12.56112,
+            "lat": 55.68214,
+            "cluster.color": 925,
+            "marker.size": 925,
+            "marker.color": 925,
+            "customdata": [
+                "Indre By",
+                7675836
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 1668,
+            "pointIndex": 1668,
+            "lon": 12.56519,
+            "lat": 55.68224,
+            "cluster.color": 500,
+            "marker.size": 500,
+            "marker.color": 500,
+            "customdata": [
+                "Indre By",
+                7385075
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 1701,
+            "pointIndex": 1701,
+            "lon": 12.56371,
+            "lat": 55.68318,
+            "cluster.color": 1500,
+            "marker.size": 1500,
+            "marker.color": 1500,
+            "customdata": [
+                "Indre By",
+                8166111
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 1767,
+            "pointIndex": 1767,
+            "lon": 12.56385,
+            "lat": 55.68429,
+            "cluster.color": 1200,
+            "marker.size": 1200,
+            "marker.color": 1200,
+            "customdata": [
+                "Indre By",
+                8360283
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 1769,
+            "pointIndex": 1769,
+            "lon": 12.56707,
+            "lat": 55.6851,
+            "cluster.color": 1450,
+            "marker.size": 1450,
+            "marker.color": 1450,
+            "customdata": [
+                "Indre By",
+                8959135
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 1839,
+            "pointIndex": 1839,
+            "lon": 12.56805,
+            "lat": 55.68303,
+            "cluster.color": 3507,
+            "marker.size": 3507,
+            "marker.color": 3507,
+            "customdata": [
+                "Indre By",
+                8573371
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 1846,
+            "pointIndex": 1846,
+            "lon": 12.56384,
+            "lat": 55.68231,
+            "cluster.color": 1000,
+            "marker.size": 1000,
+            "marker.color": 1000,
+            "customdata": [
+                "Indre By",
+                8585592
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 1850,
+            "pointIndex": 1850,
+            "lon": 12.56552,
+            "lat": 55.68421,
+            "cluster.color": 2000,
+            "marker.size": 2000,
+            "marker.color": 2000,
+            "customdata": [
+                "Indre By",
+                8590161
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 2032,
+            "pointIndex": 2032,
+            "lon": 12.56225,
+            "lat": 55.68135,
+            "cluster.color": 1829,
+            "marker.size": 1829,
+            "marker.color": 1829,
+            "customdata": [
+                "Indre By",
+                10565344
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 2075,
+            "pointIndex": 2075,
+            "lon": 12.56501,
+            "lat": 55.68277,
+            "cluster.color": 750,
+            "marker.size": 750,
+            "marker.color": 750,
+            "customdata": [
+                "Indre By",
+                11295109
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 2089,
+            "pointIndex": 2089,
+            "lon": 12.56844,
+            "lat": 55.68391,
+            "cluster.color": 3214,
+            "marker.size": 3214,
+            "marker.color": 3214,
+            "customdata": [
+                "Indre By",
+                10677376
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 2130,
+            "pointIndex": 2130,
+            "lon": 12.56835,
+            "lat": 55.68478,
+            "cluster.color": 1300,
+            "marker.size": 1300,
+            "marker.color": 1300,
+            "customdata": [
+                "Indre By",
+                12205077
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 2258,
+            "pointIndex": 2258,
+            "lon": 12.56235,
+            "lat": 55.68425,
+            "cluster.color": 1523,
+            "marker.size": 1523,
+            "marker.color": 1523,
+            "customdata": [
+                "Indre By",
+                13248111
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 2267,
+            "pointIndex": 2267,
+            "lon": 12.56524,
+            "lat": 55.68383,
+            "cluster.color": 1379,
+            "marker.size": 1379,
+            "marker.color": 1379,
+            "customdata": [
+                "Indre By",
+                13259358
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 2369,
+            "pointIndex": 2369,
+            "lon": 12.56582,
+            "lat": 55.68285,
+            "cluster.color": 1293,
+            "marker.size": 1293,
+            "marker.color": 1293,
+            "customdata": [
+                "Indre By",
+                13588507
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 2372,
+            "pointIndex": 2372,
+            "lon": 12.56762,
+            "lat": 55.68429,
+            "cluster.color": 1916,
+            "marker.size": 1916,
+            "marker.color": 1916,
+            "customdata": [
+                "Indre By",
+                13387612
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 2376,
+            "pointIndex": 2376,
+            "lon": 12.56026,
+            "lat": 55.68305,
+            "cluster.color": 1300,
+            "marker.size": 1300,
+            "marker.color": 1300,
+            "customdata": [
+                "Indre By",
+                13392209
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 2520,
+            "pointIndex": 2520,
+            "lon": 12.5618,
+            "lat": 55.68098,
+            "cluster.color": 1019,
+            "marker.size": 1019,
+            "marker.color": 1019,
+            "customdata": [
+                "Indre By",
+                14105462
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 2530,
+            "pointIndex": 2530,
+            "lon": 12.56826,
+            "lat": 55.68554,
+            "cluster.color": 1143,
+            "marker.size": 1143,
+            "marker.color": 1143,
+            "customdata": [
+                "Indre By",
+                14144717
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 2589,
+            "pointIndex": 2589,
+            "lon": 12.56744,
+            "lat": 55.68373,
+            "cluster.color": 850,
+            "marker.size": 850,
+            "marker.color": 850,
+            "customdata": [
+                "Indre By",
+                14461471
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 2627,
+            "pointIndex": 2627,
+            "lon": 12.56792,
+            "lat": 55.68514,
+            "cluster.color": 651,
+            "marker.size": 651,
+            "marker.color": 651,
+            "customdata": [
+                "Indre By",
+                14624212
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 2645,
+            "pointIndex": 2645,
+            "lon": 12.56349,
+            "lat": 55.6809,
+            "cluster.color": 4000,
+            "marker.size": 4000,
+            "marker.color": 4000,
+            "customdata": [
+                "Indre By",
+                15056326
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 2695,
+            "pointIndex": 2695,
+            "lon": 12.56442,
+            "lat": 55.68431,
+            "cluster.color": 303,
+            "marker.size": 303,
+            "marker.color": 303,
+            "customdata": [
+                "Indre By",
+                15191908
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 2719,
+            "pointIndex": 2719,
+            "lon": 12.56363,
+            "lat": 55.68246,
+            "cluster.color": 1786,
+            "marker.size": 1786,
+            "marker.color": 1786,
+            "customdata": [
+                "Indre By",
+                15732251
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 2821,
+            "pointIndex": 2821,
+            "lon": 12.56235,
+            "lat": 55.68143,
+            "cluster.color": 1021,
+            "marker.size": 1021,
+            "marker.color": 1021,
+            "customdata": [
+                "Indre By",
+                17327161
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 2883,
+            "pointIndex": 2883,
+            "lon": 12.56451,
+            "lat": 55.68265,
+            "cluster.color": 1150,
+            "marker.size": 1150,
+            "marker.color": 1150,
+            "customdata": [
+                "Indre By",
+                16415632
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 2894,
+            "pointIndex": 2894,
+            "lon": 12.56709,
+            "lat": 55.68385,
+            "cluster.color": 1376,
+            "marker.size": 1376,
+            "marker.color": 1376,
+            "customdata": [
+                "Indre By",
+                16959372
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 2948,
+            "pointIndex": 2948,
+            "lon": 12.56436,
+            "lat": 55.67917,
+            "cluster.color": 2000,
+            "marker.size": 2000,
+            "marker.color": 2000,
+            "customdata": [
+                "Indre By",
+                16638369
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 2969,
+            "pointIndex": 2969,
+            "lon": 12.56474,
+            "lat": 55.68261,
+            "cluster.color": 1250,
+            "marker.size": 1250,
+            "marker.color": 1250,
+            "customdata": [
+                "Indre By",
+                17131188
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 2999,
+            "pointIndex": 2999,
+            "lon": 12.56391,
+            "lat": 55.68116,
+            "cluster.color": 943,
+            "marker.size": 943,
+            "marker.color": 943,
+            "customdata": [
+                "Indre By",
+                16748251
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 3063,
+            "pointIndex": 3063,
+            "lon": 12.56265,
+            "lat": 55.68304,
+            "cluster.color": 1429,
+            "marker.size": 1429,
+            "marker.color": 1429,
+            "customdata": [
+                "Indre By",
+                18004060
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 3319,
+            "pointIndex": 3319,
+            "lon": 12.56367,
+            "lat": 55.68219,
+            "cluster.color": 1700,
+            "marker.size": 1700,
+            "marker.color": 1700,
+            "customdata": [
+                "Indre By",
+                19325586
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 3342,
+            "pointIndex": 3342,
+            "lon": 12.56155,
+            "lat": 55.68204,
+            "cluster.color": 1022,
+            "marker.size": 1022,
+            "marker.color": 1022,
+            "customdata": [
+                "Indre By",
+                19375857
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 3447,
+            "pointIndex": 3447,
+            "lon": 12.56789,
+            "lat": 55.68369,
+            "cluster.color": 541,
+            "marker.size": 541,
+            "marker.color": 541,
+            "customdata": [
+                "Indre By",
+                20028752
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 3513,
+            "pointIndex": 3513,
+            "lon": 12.56251,
+            "lat": 55.68077,
+            "cluster.color": 1800,
+            "marker.size": 1800,
+            "marker.color": 1800,
+            "customdata": [
+                "Indre By",
+                20927916
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 3599,
+            "pointIndex": 3599,
+            "lon": 12.56565,
+            "lat": 55.68509,
+            "cluster.color": 429,
+            "marker.size": 429,
+            "marker.color": 429,
+            "customdata": [
+                "Indre By",
+                21289602
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 3605,
+            "pointIndex": 3605,
+            "lon": 12.56438,
+            "lat": 55.68434,
+            "cluster.color": 933,
+            "marker.size": 933,
+            "marker.color": 933,
+            "customdata": [
+                "Indre By",
+                21290696
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 3607,
+            "pointIndex": 3607,
+            "lon": 12.56395,
+            "lat": 55.68233,
+            "cluster.color": 699,
+            "marker.size": 699,
+            "marker.color": 699,
+            "customdata": [
+                "Indre By",
+                21316502
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 3611,
+            "pointIndex": 3611,
+            "lon": 12.56805,
+            "lat": 55.68309,
+            "cluster.color": 1000,
+            "marker.size": 1000,
+            "marker.color": 1000,
+            "customdata": [
+                "Indre By",
+                21101068
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 3654,
+            "pointIndex": 3654,
+            "lon": 12.56415,
+            "lat": 55.68419,
+            "cluster.color": 2029,
+            "marker.size": 2029,
+            "marker.color": 2029,
+            "customdata": [
+                "Indre By",
+                21183454
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 3657,
+            "pointIndex": 3657,
+            "lon": 12.56165,
+            "lat": 55.68014,
+            "cluster.color": 1900,
+            "marker.size": 1900,
+            "marker.color": 1900,
+            "customdata": [
+                "Indre By",
+                21187566
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 3658,
+            "pointIndex": 3658,
+            "lon": 12.56686,
+            "lat": 55.68295,
+            "cluster.color": 700,
+            "marker.size": 700,
+            "marker.color": 700,
+            "customdata": [
+                "Indre By",
+                21422932
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 3824,
+            "pointIndex": 3824,
+            "lon": 12.56428,
+            "lat": 55.68274,
+            "cluster.color": 3443,
+            "marker.size": 3443,
+            "marker.color": 3443,
+            "customdata": [
+                "Indre By",
+                23099769
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 3858,
+            "pointIndex": 3858,
+            "lon": 12.56217,
+            "lat": 55.68265,
+            "cluster.color": 343,
+            "marker.size": 343,
+            "marker.color": 343,
+            "customdata": [
+                "Indre By",
+                23665966
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 3867,
+            "pointIndex": 3867,
+            "lon": 12.56477,
+            "lat": 55.6833,
+            "cluster.color": 1119,
+            "marker.size": 1119,
+            "marker.color": 1119,
+            "customdata": [
+                "Indre By",
+                23227624
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 3868,
+            "pointIndex": 3868,
+            "lon": 12.56772,
+            "lat": 55.68585,
+            "cluster.color": 2500,
+            "marker.size": 2500,
+            "marker.color": 2500,
+            "customdata": [
+                "Indre By",
+                23707263
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 3937,
+            "pointIndex": 3937,
+            "lon": 12.56285,
+            "lat": 55.68319,
+            "cluster.color": 850,
+            "marker.size": 850,
+            "marker.color": 850,
+            "customdata": [
+                "Indre By",
+                23908727
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 3959,
+            "pointIndex": 3959,
+            "lon": 12.563,
+            "lat": 55.68147,
+            "cluster.color": 1229,
+            "marker.size": 1229,
+            "marker.color": 1229,
+            "customdata": [
+                "Indre By",
+                24224683
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 4031,
+            "pointIndex": 4031,
+            "lon": 12.5679,
+            "lat": 55.68408,
+            "cluster.color": 990,
+            "marker.size": 990,
+            "marker.color": 990,
+            "customdata": [
+                "Indre By",
+                24105379
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 4041,
+            "pointIndex": 4041,
+            "lon": 12.56015,
+            "lat": 55.68233,
+            "cluster.color": 1400,
+            "marker.size": 1400,
+            "marker.color": 1400,
+            "customdata": [
+                "Indre By",
+                24797705
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 4285,
+            "pointIndex": 4285,
+            "lon": 12.56565,
+            "lat": 55.68224,
+            "cluster.color": 195,
+            "marker.size": 195,
+            "marker.color": 195,
+            "customdata": [
+                "Indre By",
+                25851499
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 4380,
+            "pointIndex": 4380,
+            "lon": 12.562639,
+            "lat": 55.681217,
+            "cluster.color": 750,
+            "marker.size": 750,
+            "marker.color": 750,
+            "customdata": [
+                "Indre By",
+                26218444
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 4435,
+            "pointIndex": 4435,
+            "lon": 12.56296,
+            "lat": 55.68371,
+            "cluster.color": 1042,
+            "marker.size": 1042,
+            "marker.color": 1042,
+            "customdata": [
+                "Indre By",
+                26742944
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 4439,
+            "pointIndex": 4439,
+            "lon": 12.56402,
+            "lat": 55.68309,
+            "cluster.color": 1466,
+            "marker.size": 1466,
+            "marker.color": 1466,
+            "customdata": [
+                "Indre By",
+                26742957
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 4496,
+            "pointIndex": 4496,
+            "lon": 12.56837,
+            "lat": 55.68564,
+            "cluster.color": 1220,
+            "marker.size": 1220,
+            "marker.color": 1220,
+            "customdata": [
+                "Indre By",
+                26743427
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 4580,
+            "pointIndex": 4580,
+            "lon": 12.56209,
+            "lat": 55.68027,
+            "cluster.color": 550,
+            "marker.size": 550,
+            "marker.color": 550,
+            "customdata": [
+                "Indre By",
+                26928875
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 4616,
+            "pointIndex": 4616,
+            "lon": 12.56819,
+            "lat": 55.68428,
+            "cluster.color": 1200,
+            "marker.size": 1200,
+            "marker.color": 1200,
+            "customdata": [
+                "Indre By",
+                28062475
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 4693,
+            "pointIndex": 4693,
+            "lon": 12.56264,
+            "lat": 55.68236,
+            "cluster.color": 1049,
+            "marker.size": 1049,
+            "marker.color": 1049,
+            "customdata": [
+                "Indre By",
+                27829535
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 4823,
+            "pointIndex": 4823,
+            "lon": 12.56793,
+            "lat": 55.68389,
+            "cluster.color": 4000,
+            "marker.size": 4000,
+            "marker.color": 4000,
+            "customdata": [
+                "Indre By",
+                29207512
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 4910,
+            "pointIndex": 4910,
+            "lon": 12.56457,
+            "lat": 55.6842,
+            "cluster.color": 1500,
+            "marker.size": 1500,
+            "marker.color": 1500,
+            "customdata": [
+                "Indre By",
+                30139804
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 5039,
+            "pointIndex": 5039,
+            "lon": 12.56623,
+            "lat": 55.68443,
+            "cluster.color": 1400,
+            "marker.size": 1400,
+            "marker.color": 1400,
+            "customdata": [
+                "Indre By",
+                31485818
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 5070,
+            "pointIndex": 5070,
+            "lon": 12.5674,
+            "lat": 55.68477,
+            "cluster.color": 730,
+            "marker.size": 730,
+            "marker.color": 730,
+            "customdata": [
+                "Indre By",
+                31592094
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 5109,
+            "pointIndex": 5109,
+            "lon": 12.56865,
+            "lat": 55.68581,
+            "cluster.color": 1700,
+            "marker.size": 1700,
+            "marker.color": 1700,
+            "customdata": [
+                "Indre By",
+                31703971
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 5138,
+            "pointIndex": 5138,
+            "lon": 12.56752,
+            "lat": 55.68563,
+            "cluster.color": 965,
+            "marker.size": 965,
+            "marker.color": 965,
+            "customdata": [
+                "Indre By",
+                31214651
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 5143,
+            "pointIndex": 5143,
+            "lon": 12.56236,
+            "lat": 55.68377,
+            "cluster.color": 4357,
+            "marker.size": 4357,
+            "marker.color": 4357,
+            "customdata": [
+                "Indre By",
+                31866429
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 5173,
+            "pointIndex": 5173,
+            "lon": 12.56729,
+            "lat": 55.68292,
+            "cluster.color": 1050,
+            "marker.size": 1050,
+            "marker.color": 1050,
+            "customdata": [
+                "Indre By",
+                32545448
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 5243,
+            "pointIndex": 5243,
+            "lon": 12.56617,
+            "lat": 55.68587,
+            "cluster.color": 1287,
+            "marker.size": 1287,
+            "marker.color": 1287,
+            "customdata": [
+                "Indre By",
+                32754409
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 5506,
+            "pointIndex": 5506,
+            "lon": 12.56479,
+            "lat": 55.68206,
+            "cluster.color": 1300,
+            "marker.size": 1300,
+            "marker.color": 1300,
+            "customdata": [
+                "Indre By",
+                35020761
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 5509,
+            "pointIndex": 5509,
+            "lon": 12.56605,
+            "lat": 55.6829,
+            "cluster.color": 900,
+            "marker.size": 900,
+            "marker.color": 900,
+            "customdata": [
+                "Indre By",
+                35020784
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 5588,
+            "pointIndex": 5588,
+            "lon": 12.56134,
+            "lat": 55.67975,
+            "cluster.color": 3900,
+            "marker.size": 3900,
+            "marker.color": 3900,
+            "customdata": [
+                "Indre By",
+                35418072
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 5602,
+            "pointIndex": 5602,
+            "lon": 12.56465,
+            "lat": 55.68435,
+            "cluster.color": 2500,
+            "marker.size": 2500,
+            "marker.color": 2500,
+            "customdata": [
+                "Indre By",
+                34813295
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 5644,
+            "pointIndex": 5644,
+            "lon": 12.56364,
+            "lat": 55.68224,
+            "cluster.color": 1543,
+            "marker.size": 1543,
+            "marker.color": 1543,
+            "customdata": [
+                "Indre By",
+                34866178
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 5653,
+            "pointIndex": 5653,
+            "lon": 12.56157,
+            "lat": 55.68245,
+            "cluster.color": 995,
+            "marker.size": 995,
+            "marker.color": 995,
+            "customdata": [
+                "Indre By",
+                34895942
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 5705,
+            "pointIndex": 5705,
+            "lon": 12.56168,
+            "lat": 55.68249,
+            "cluster.color": 893,
+            "marker.size": 893,
+            "marker.color": 893,
+            "customdata": [
+                "Indre By",
+                35599125
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 5801,
+            "pointIndex": 5801,
+            "lon": 12.56429,
+            "lat": 55.68101,
+            "cluster.color": 1557,
+            "marker.size": 1557,
+            "marker.color": 1557,
+            "customdata": [
+                "Indre By",
+                36090817
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 5802,
+            "pointIndex": 5802,
+            "lon": 12.56475,
+            "lat": 55.68498,
+            "cluster.color": 600,
+            "marker.size": 600,
+            "marker.color": 600,
+            "customdata": [
+                "Indre By",
+                35856548
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 5832,
+            "pointIndex": 5832,
+            "lon": 12.56694,
+            "lat": 55.68471,
+            "cluster.color": 1327,
+            "marker.size": 1327,
+            "marker.color": 1327,
+            "customdata": [
+                "Indre By",
+                35903812
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 5901,
+            "pointIndex": 5901,
+            "lon": 12.56525,
+            "lat": 55.68412,
+            "cluster.color": 1807,
+            "marker.size": 1807,
+            "marker.color": 1807,
+            "customdata": [
+                "Indre By",
+                36339863
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 5902,
+            "pointIndex": 5902,
+            "lon": 12.56345,
+            "lat": 55.68327,
+            "cluster.color": 934,
+            "marker.size": 934,
+            "marker.color": 934,
+            "customdata": [
+                "Indre By",
+                36342881
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 5908,
+            "pointIndex": 5908,
+            "lon": 12.56523,
+            "lat": 55.68441,
+            "cluster.color": 1100,
+            "marker.size": 1100,
+            "marker.color": 1100,
+            "customdata": [
+                "Indre By",
+                36350618
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 5913,
+            "pointIndex": 5913,
+            "lon": 12.56203,
+            "lat": 55.68387,
+            "cluster.color": 1000,
+            "marker.size": 1000,
+            "marker.color": 1000,
+            "customdata": [
+                "Indre By",
+                36402287
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 5948,
+            "pointIndex": 5948,
+            "lon": 12.56648,
+            "lat": 55.68501,
+            "cluster.color": 2286,
+            "marker.size": 2286,
+            "marker.color": 2286,
+            "customdata": [
+                "Indre By",
+                36491001
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 5960,
+            "pointIndex": 5960,
+            "lon": 12.5665,
+            "lat": 55.68522,
+            "cluster.color": 750,
+            "marker.size": 750,
+            "marker.color": 750,
+            "customdata": [
+                "Indre By",
+                36963682
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 6045,
+            "pointIndex": 6045,
+            "lon": 12.5634,
+            "lat": 55.68406,
+            "cluster.color": 1500,
+            "marker.size": 1500,
+            "marker.color": 1500,
+            "customdata": [
+                "Indre By",
+                37657326
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 6057,
+            "pointIndex": 6057,
+            "lon": 12.56244,
+            "lat": 55.68229,
+            "cluster.color": 1200,
+            "marker.size": 1200,
+            "marker.color": 1200,
+            "customdata": [
+                "Indre By",
+                37769590
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 6103,
+            "pointIndex": 6103,
+            "lon": 12.56358786931152,
+            "lat": 55.679968939598446,
+            "cluster.color": 4320,
+            "marker.size": 4320,
+            "marker.color": 4320,
+            "customdata": [
+                "Indre By",
+                37868253
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 6120,
+            "pointIndex": 6120,
+            "lon": 12.56491,
+            "lat": 55.68451,
+            "cluster.color": 1700,
+            "marker.size": 1700,
+            "marker.color": 1700,
+            "customdata": [
+                "Indre By",
+                37958657
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 6355,
+            "pointIndex": 6355,
+            "lon": 12.56332,
+            "lat": 55.68285,
+            "cluster.color": 2000,
+            "marker.size": 2000,
+            "marker.color": 2000,
+            "customdata": [
+                "Indre By",
+                39603972
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 6407,
+            "pointIndex": 6407,
+            "lon": 12.56149,
+            "lat": 55.67864,
+            "cluster.color": 1000,
+            "marker.size": 1000,
+            "marker.color": 1000,
+            "customdata": [
+                "Indre By",
+                39768534
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 6551,
+            "pointIndex": 6551,
+            "lon": 12.56602,
+            "lat": 55.68448,
+            "cluster.color": 1800,
+            "marker.size": 1800,
+            "marker.color": 1800,
+            "customdata": [
+                "Indre By",
+                40702071
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 6567,
+            "pointIndex": 6567,
+            "lon": 12.56297,
+            "lat": 55.68277,
+            "cluster.color": 356,
+            "marker.size": 356,
+            "marker.color": 356,
+            "customdata": [
+                "Indre By",
+                41311271
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 6571,
+            "pointIndex": 6571,
+            "lon": 12.56367,
+            "lat": 55.68393,
+            "cluster.color": 950,
+            "marker.size": 950,
+            "marker.color": 950,
+            "customdata": [
+                "Indre By",
+                40767899
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 6574,
+            "pointIndex": 6574,
+            "lon": 12.56722,
+            "lat": 55.68524,
+            "cluster.color": 1500,
+            "marker.size": 1500,
+            "marker.color": 1500,
+            "customdata": [
+                "Indre By",
+                40780623
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 6686,
+            "pointIndex": 6686,
+            "lon": 12.56371,
+            "lat": 55.68004,
+            "cluster.color": 1464,
+            "marker.size": 1464,
+            "marker.color": 1464,
+            "customdata": [
+                "Indre By",
+                41568888
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 6713,
+            "pointIndex": 6713,
+            "lon": 12.56343,
+            "lat": 55.68198,
+            "cluster.color": 1086,
+            "marker.size": 1086,
+            "marker.color": 1086,
+            "customdata": [
+                "Indre By",
+                42108687
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 6766,
+            "pointIndex": 6766,
+            "lon": 12.56596,
+            "lat": 55.68362,
+            "cluster.color": 925,
+            "marker.size": 925,
+            "marker.color": 925,
+            "customdata": [
+                "Indre By",
+                42018866
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 6768,
+            "pointIndex": 6768,
+            "lon": 12.56797,
+            "lat": 55.68517,
+            "cluster.color": 1340,
+            "marker.size": 1340,
+            "marker.color": 1340,
+            "customdata": [
+                "Indre By",
+                42554637
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 6857,
+            "pointIndex": 6857,
+            "lon": 12.561308,
+            "lat": 55.681488,
+            "cluster.color": 1600,
+            "marker.size": 1600,
+            "marker.color": 1600,
+            "customdata": [
+                "Indre By",
+                42423461
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 6861,
+            "pointIndex": 6861,
+            "lon": 12.56148,
+            "lat": 55.6816,
+            "cluster.color": 1500,
+            "marker.size": 1500,
+            "marker.color": 1500,
+            "customdata": [
+                "Indre By",
+                42770930
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 6941,
+            "pointIndex": 6941,
+            "lon": 12.56036,
+            "lat": 55.68131,
+            "cluster.color": 1835,
+            "marker.size": 1835,
+            "marker.color": 1835,
+            "customdata": [
+                "Indre By",
+                43083617
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 7000,
+            "pointIndex": 7000,
+            "lon": 12.56643,
+            "lat": 55.68493,
+            "cluster.color": 700,
+            "marker.size": 700,
+            "marker.color": 700,
+            "customdata": [
+                "Indre By",
+                43739928
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 7074,
+            "pointIndex": 7074,
+            "lon": 12.56723,
+            "lat": 55.68535,
+            "cluster.color": 1771,
+            "marker.size": 1771,
+            "marker.color": 1771,
+            "customdata": [
+                "Indre By",
+                43577342
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 7155,
+            "pointIndex": 7155,
+            "lon": 12.56175,
+            "lat": 55.6854,
+            "cluster.color": 843,
+            "marker.size": 843,
+            "marker.color": 843,
+            "customdata": [
+                "Indre By",
+                44040381
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 7163,
+            "pointIndex": 7163,
+            "lon": 12.56797,
+            "lat": 55.68561,
+            "cluster.color": 2400,
+            "marker.size": 2400,
+            "marker.color": 2400,
+            "customdata": [
+                "Indre By",
+                44231951
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 7235,
+            "pointIndex": 7235,
+            "lon": 12.5631,
+            "lat": 55.67994,
+            "cluster.color": 1649,
+            "marker.size": 1649,
+            "marker.color": 1649,
+            "customdata": [
+                "Indre By",
+                44347290
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 7238,
+            "pointIndex": 7238,
+            "lon": 12.56326,
+            "lat": 55.6787,
+            "cluster.color": 2681,
+            "marker.size": 2681,
+            "marker.color": 2681,
+            "customdata": [
+                "Indre By",
+                44348286
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 7239,
+            "pointIndex": 7239,
+            "lon": 12.56291,
+            "lat": 55.67977,
+            "cluster.color": 3297,
+            "marker.size": 3297,
+            "marker.color": 3297,
+            "customdata": [
+                "Indre By",
+                44348973
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 7287,
+            "pointIndex": 7287,
+            "lon": 12.56309,
+            "lat": 55.68198,
+            "cluster.color": 778,
+            "marker.size": 778,
+            "marker.color": 778,
+            "customdata": [
+                "Indre By",
+                44120724
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 7313,
+            "pointIndex": 7313,
+            "lon": 12.56114,
+            "lat": 55.67933,
+            "cluster.color": 2196,
+            "marker.size": 2196,
+            "marker.color": 2196,
+            "customdata": [
+                "Indre By",
+                45129905
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 7500,
+            "pointIndex": 7500,
+            "lon": 12.56254,
+            "lat": 55.67946,
+            "cluster.color": 1500,
+            "marker.size": 1500,
+            "marker.color": 1500,
+            "customdata": [
+                "Indre By",
+                45515321
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 7502,
+            "pointIndex": 7502,
+            "lon": 12.56251,
+            "lat": 55.68058,
+            "cluster.color": 1300,
+            "marker.size": 1300,
+            "marker.color": 1300,
+            "customdata": [
+                "Indre By",
+                45524122
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 7576,
+            "pointIndex": 7576,
+            "lon": 12.56368,
+            "lat": 55.6828,
+            "cluster.color": 1400,
+            "marker.size": 1400,
+            "marker.color": 1400,
+            "customdata": [
+                "Indre By",
+                47739223
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 7894,
+            "pointIndex": 7894,
+            "lon": 12.56634,
+            "lat": 55.6855,
+            "cluster.color": 950,
+            "marker.size": 950,
+            "marker.color": 950,
+            "customdata": [
+                "Indre By",
+                50092771
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 7964,
+            "pointIndex": 7964,
+            "lon": 12.5645,
+            "lat": 55.6819,
+            "cluster.color": 511,
+            "marker.size": 511,
+            "marker.color": 511,
+            "customdata": [
+                "Indre By",
+                50170160
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 7996,
+            "pointIndex": 7996,
+            "lon": 12.56445,
+            "lat": 55.68197,
+            "cluster.color": 721,
+            "marker.size": 721,
+            "marker.color": 721,
+            "customdata": [
+                "Indre By",
+                50189681
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 8006,
+            "pointIndex": 8006,
+            "lon": 12.56251,
+            "lat": 55.68426,
+            "cluster.color": 750,
+            "marker.size": 750,
+            "marker.color": 750,
+            "customdata": [
+                "Indre By",
+                50209685
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 8050,
+            "pointIndex": 8050,
+            "lon": 12.563027,
+            "lat": 55.683392,
+            "cluster.color": 1750,
+            "marker.size": 1750,
+            "marker.color": 1750,
+            "customdata": [
+                "Indre By",
+                50417349
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 8051,
+            "pointIndex": 8051,
+            "lon": 12.56734,
+            "lat": 55.68552,
+            "cluster.color": 999,
+            "marker.size": 999,
+            "marker.color": 999,
+            "customdata": [
+                "Indre By",
+                50418938
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 8098,
+            "pointIndex": 8098,
+            "lon": 12.5641,
+            "lat": 55.68124,
+            "cluster.color": 689,
+            "marker.size": 689,
+            "marker.color": 689,
+            "customdata": [
+                "Indre By",
+                50555253
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 8191,
+            "pointIndex": 8191,
+            "lon": 12.5642,
+            "lat": 55.68412,
+            "cluster.color": 1493,
+            "marker.size": 1493,
+            "marker.color": 1493,
+            "customdata": [
+                "Indre By",
+                50629328
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 8197,
+            "pointIndex": 8197,
+            "lon": 12.56319,
+            "lat": 55.68175,
+            "cluster.color": 1000,
+            "marker.size": 1000,
+            "marker.color": 1000,
+            "customdata": [
+                "Indre By",
+                50848330
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 8208,
+            "pointIndex": 8208,
+            "lon": 12.56111751836099,
+            "lat": 55.684733065299085,
+            "cluster.color": 1100,
+            "marker.size": 1100,
+            "marker.color": 1100,
+            "customdata": [
+                "Indre By",
+                50862085
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 8217,
+            "pointIndex": 8217,
+            "lon": 12.56404,
+            "lat": 55.68321,
+            "cluster.color": 2500,
+            "marker.size": 2500,
+            "marker.color": 2500,
+            "customdata": [
+                "Indre By",
+                50670754
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 8312,
+            "pointIndex": 8312,
+            "lon": 12.56126,
+            "lat": 55.68337,
+            "cluster.color": 1314,
+            "marker.size": 1314,
+            "marker.color": 1314,
+            "customdata": [
+                "Indre By",
+                51137265
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 8351,
+            "pointIndex": 8351,
+            "lon": 12.56461,
+            "lat": 55.68254,
+            "cluster.color": 1107,
+            "marker.size": 1107,
+            "marker.color": 1107,
+            "customdata": [
+                "Indre By",
+                51167623
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 8415,
+            "pointIndex": 8415,
+            "lon": 12.56448,
+            "lat": 55.68142,
+            "cluster.color": 1400,
+            "marker.size": 1400,
+            "marker.color": 1400,
+            "customdata": [
+                "Indre By",
+                51350079
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 8448,
+            "pointIndex": 8448,
+            "lon": 12.564243741074222,
+            "lat": 55.68609395721007,
+            "cluster.color": 1350,
+            "marker.size": 1350,
+            "marker.color": 1350,
+            "customdata": [
+                "Indre By",
+                51405552
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 8745,
+            "pointIndex": 8745,
+            "lon": 12.56269,
+            "lat": 55.6831,
+            "cluster.color": 800,
+            "marker.size": 800,
+            "marker.color": 800,
+            "customdata": [
+                "Indre By",
+                52631436
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 8950,
+            "pointIndex": 8950,
+            "lon": 12.56275,
+            "lat": 55.68206,
+            "cluster.color": 1057,
+            "marker.size": 1057,
+            "marker.color": 1057,
+            "customdata": [
+                "Indre By",
+                53308290
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 8955,
+            "pointIndex": 8955,
+            "lon": 12.56537,
+            "lat": 55.68439,
+            "cluster.color": 2000,
+            "marker.size": 2000,
+            "marker.color": 2000,
+            "customdata": [
+                "Indre By",
+                53572130
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 9045,
+            "pointIndex": 9045,
+            "lon": 12.56259,
+            "lat": 55.68005,
+            "cluster.color": 1869,
+            "marker.size": 1869,
+            "marker.color": 1869,
+            "customdata": [
+                "Indre By",
+                53697876
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 9157,
+            "pointIndex": 9157,
+            "lon": 12.56188,
+            "lat": 55.68154,
+            "cluster.color": 1400,
+            "marker.size": 1400,
+            "marker.color": 1400,
+            "customdata": [
+                "Indre By",
+                54177016
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 9163,
+            "pointIndex": 9163,
+            "lon": 12.56476,
+            "lat": 55.68066,
+            "cluster.color": 1197,
+            "marker.size": 1197,
+            "marker.color": 1197,
+            "customdata": [
+                "Indre By",
+                53999861
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 9268,
+            "pointIndex": 9268,
+            "lon": 12.56515,
+            "lat": 55.68218,
+            "cluster.color": 500,
+            "marker.size": 500,
+            "marker.color": 500,
+            "customdata": [
+                "Indre By",
+                54253260
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 9293,
+            "pointIndex": 9293,
+            "lon": 12.56413,
+            "lat": 55.68175,
+            "cluster.color": 1800,
+            "marker.size": 1800,
+            "marker.color": 1800,
+            "customdata": [
+                "Indre By",
+                546833321445468200
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 9330,
+            "pointIndex": 9330,
+            "lon": 12.562282,
+            "lat": 55.682762,
+            "cluster.color": 3030,
+            "marker.size": 3030,
+            "marker.color": 3030,
+            "customdata": [
+                "Indre By",
+                548131699949049800
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 9420,
+            "pointIndex": 9420,
+            "lon": 12.563387,
+            "lat": 55.681419,
+            "cluster.color": 1621,
+            "marker.size": 1621,
+            "marker.color": 1621,
+            "customdata": [
+                "Indre By",
+                548799633620644200
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 9564,
+            "pointIndex": 9564,
+            "lon": 12.56599,
+            "lat": 55.68425,
+            "cluster.color": 1329,
+            "marker.size": 1329,
+            "marker.color": 1329,
+            "customdata": [
+                "Indre By",
+                576048402499885950
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 9706,
+            "pointIndex": 9706,
+            "lon": 12.564694,
+            "lat": 55.682915,
+            "cluster.color": 900,
+            "marker.size": 900,
+            "marker.color": 900,
+            "customdata": [
+                "Indre By",
+                581032265005471000
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 9746,
+            "pointIndex": 9746,
+            "lon": 12.56127,
+            "lat": 55.68347,
+            "cluster.color": 1066,
+            "marker.size": 1066,
+            "marker.color": 1066,
+            "customdata": [
+                "Indre By",
+                559352315241050240
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 9748,
+            "pointIndex": 9748,
+            "lon": 12.560948,
+            "lat": 55.680527,
+            "cluster.color": 1950,
+            "marker.size": 1950,
+            "marker.color": 1950,
+            "customdata": [
+                "Indre By",
+                587395576804994200
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 9830,
+            "pointIndex": 9830,
+            "lon": 12.56498,
+            "lat": 55.68086,
+            "cluster.color": 950,
+            "marker.size": 950,
+            "marker.color": 950,
+            "customdata": [
+                "Indre By",
+                592501128787064800
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 9838,
+            "pointIndex": 9838,
+            "lon": 12.56213,
+            "lat": 55.68145,
+            "cluster.color": 1100,
+            "marker.size": 1100,
+            "marker.color": 1100,
+            "customdata": [
+                "Indre By",
+                592618850943973100
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 9862,
+            "pointIndex": 9862,
+            "lon": 12.56693,
+            "lat": 55.68467,
+            "cluster.color": 1590,
+            "marker.size": 1590,
+            "marker.color": 1590,
+            "customdata": [
+                "Indre By",
+                586838229777071600
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 9983,
+            "pointIndex": 9983,
+            "lon": 12.56436,
+            "lat": 55.68451,
+            "cluster.color": 1200,
+            "marker.size": 1200,
+            "marker.color": 1200,
+            "customdata": [
+                "Indre By",
+                595277078299104900
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 10136,
+            "pointIndex": 10136,
+            "lon": 12.56253,
+            "lat": 55.68471,
+            "cluster.color": 195,
+            "marker.size": 195,
+            "marker.color": 195,
+            "customdata": [
+                "Indre By",
+                607630127443562600
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 10284,
+            "pointIndex": 10284,
+            "lon": 12.56441,
+            "lat": 55.68272,
+            "cluster.color": 1300,
+            "marker.size": 1300,
+            "marker.color": 1300,
+            "customdata": [
+                "Indre By",
+                610021316800333000
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 10370,
+            "pointIndex": 10370,
+            "lon": 12.56335,
+            "lat": 55.68187,
+            "cluster.color": 1200,
+            "marker.size": 1200,
+            "marker.color": 1200,
+            "customdata": [
+                "Indre By",
+                620224743430752500
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 10451,
+            "pointIndex": 10451,
+            "lon": 12.56546,
+            "lat": 55.68222,
+            "cluster.color": 1714,
+            "marker.size": 1714,
+            "marker.color": 1714,
+            "customdata": [
+                "Indre By",
+                622059727576194300
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 10522,
+            "pointIndex": 10522,
+            "lon": 12.56376,
+            "lat": 55.6835,
+            "cluster.color": 733,
+            "marker.size": 733,
+            "marker.color": 733,
+            "customdata": [
+                "Indre By",
+                623927049049763700
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 10584,
+            "pointIndex": 10584,
+            "lon": 12.56238,
+            "lat": 55.68259,
+            "cluster.color": 1164,
+            "marker.size": 1164,
+            "marker.color": 1164,
+            "customdata": [
+                "Indre By",
+                630001057079325800
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 10777,
+            "pointIndex": 10777,
+            "lon": 12.56189,
+            "lat": 55.68001,
+            "cluster.color": 1300,
+            "marker.size": 1300,
+            "marker.color": 1300,
+            "customdata": [
+                "Indre By",
+                635373721134790300
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 10841,
+            "pointIndex": 10841,
+            "lon": 12.566556,
+            "lat": 55.685432,
+            "cluster.color": 1450,
+            "marker.size": 1450,
+            "marker.color": 1450,
+            "customdata": [
+                "Indre By",
+                636031006798189700
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 10890,
+            "pointIndex": 10890,
+            "lon": 12.5678,
+            "lat": 55.68508,
+            "cluster.color": 1150,
+            "marker.size": 1150,
+            "marker.color": 1150,
+            "customdata": [
+                "Indre By",
+                636735330907640800
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 10896,
+            "pointIndex": 10896,
+            "lon": 12.562865,
+            "lat": 55.683201,
+            "cluster.color": 1243,
+            "marker.size": 1243,
+            "marker.color": 1243,
+            "customdata": [
+                "Indre By",
+                639778946943929500
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 10912,
+            "pointIndex": 10912,
+            "lon": 12.56462,
+            "lat": 55.68233,
+            "cluster.color": 1004,
+            "marker.size": 1004,
+            "marker.color": 1004,
+            "customdata": [
+                "Indre By",
+                639925412583475100
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 11032,
+            "pointIndex": 11032,
+            "lon": 12.56463,
+            "lat": 55.68318,
+            "cluster.color": 1200,
+            "marker.size": 1200,
+            "marker.color": 1200,
+            "customdata": [
+                "Indre By",
+                643175228506651800
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 11044,
+            "pointIndex": 11044,
+            "lon": 12.5641281,
+            "lat": 55.6823732,
+            "cluster.color": 970,
+            "marker.size": 970,
+            "marker.color": 970,
+            "customdata": [
+                "Indre By",
+                643206829512194300
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 11094,
+            "pointIndex": 11094,
+            "lon": 12.56636,
+            "lat": 55.68464,
+            "cluster.color": 4800,
+            "marker.size": 4800,
+            "marker.color": 4800,
+            "customdata": [
+                "Indre By",
+                643953698084153000
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 11106,
+            "pointIndex": 11106,
+            "lon": 12.56184,
+            "lat": 55.68453,
+            "cluster.color": 5500,
+            "marker.size": 5500,
+            "marker.color": 5500,
+            "customdata": [
+                "Indre By",
+                644004196120545800
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 11133,
+            "pointIndex": 11133,
+            "lon": 12.56312,
+            "lat": 55.68422,
+            "cluster.color": 1200,
+            "marker.size": 1200,
+            "marker.color": 1200,
+            "customdata": [
+                "Indre By",
+                647830890910850400
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 11175,
+            "pointIndex": 11175,
+            "lon": 12.5683665,
+            "lat": 55.6839686,
+            "cluster.color": 1232,
+            "marker.size": 1232,
+            "marker.color": 1232,
+            "customdata": [
+                "Indre By",
+                646788638676381300
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 11236,
+            "pointIndex": 11236,
+            "lon": 12.5647618,
+            "lat": 55.6821371,
+            "cluster.color": 1343,
+            "marker.size": 1343,
+            "marker.color": 1343,
+            "customdata": [
+                "Indre By",
+                649043613441257000
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 11252,
+            "pointIndex": 11252,
+            "lon": 12.564137384655746,
+            "lat": 55.6825644920693,
+            "cluster.color": 960,
+            "marker.size": 960,
+            "marker.color": 960,
+            "customdata": [
+                "Indre By",
+                645347820297630800
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 11299,
+            "pointIndex": 11299,
+            "lon": 12.5630314,
+            "lat": 55.6815011,
+            "cluster.color": 1500,
+            "marker.size": 1500,
+            "marker.color": 1500,
+            "customdata": [
+                "Indre By",
+                652019687981124400
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 11365,
+            "pointIndex": 11365,
+            "lon": 12.56522,
+            "lat": 55.68529,
+            "cluster.color": 1300,
+            "marker.size": 1300,
+            "marker.color": 1300,
+            "customdata": [
+                "Indre By",
+                649971276674544900
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 11437,
+            "pointIndex": 11437,
+            "lon": 12.5670048,
+            "lat": 55.6835368,
+            "cluster.color": 1350,
+            "marker.size": 1350,
+            "marker.color": 1350,
+            "customdata": [
+                "Indre By",
+                652807774334915000
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 11449,
+            "pointIndex": 11449,
+            "lon": 12.565294615924358,
+            "lat": 55.68384054801961,
+            "cluster.color": 1200,
+            "marker.size": 1200,
+            "marker.color": 1200,
+            "customdata": [
+                "Indre By",
+                654650040575659900
+            ]
+        },
+        {
+            "curveNumber": 0,
+            "pointNumber": 11525,
+            "pointIndex": 11525,
+            "lon": 12.56601956141527,
+            "lat": 55.681837828243765,
+            "cluster.color": 1000,
+            "marker.size": 1000,
+            "marker.color": 1000,
+            "customdata": [
+                "Indre By",
+                655077382644900900
+            ]
+        }
+    ],
+    "lassoPoints": {
+        "mapbox": [
+            [
+                12.564653345680426,
+                55.67858616472196
+            ],
+            [
+                12.564653345680426,
+                55.67896190451171
+            ],
+            [
+                12.567575269798084,
+                55.68222779833903
+            ],
+            [
+                12.568344197197433,
+                55.68338380160094
+            ],
+            [
+                12.56911312459681,
+                55.68578239936119
+            ],
+            [
+                12.568856815463704,
+                55.68581129723245
+            ],
+            [
+                12.568446720850659,
+                55.685984684011714
+            ],
+            [
+                12.563628109147913,
+                55.686158070022145
+            ],
+            [
+                12.562500348962146,
+                55.68610027477075
+            ],
+            [
+                12.561987730695876,
+                55.68584019508239
+            ],
+            [
+                12.560552399550375,
+                55.68453977069407
+            ],
+            [
+                12.559834733977596,
+                55.68219889781969
+            ],
+            [
+                12.559732210324341,
+                55.679395445937956
+            ],
+            [
+                12.55993725763085,
+                55.67901971031284
+            ],
+            [
+                12.560808708683481,
+                55.67858616472196
+            ],
+            [
+                12.561628897909515,
+                55.67835493844203
+            ],
+            [
+                12.562654134442027,
+                55.67858616472196
+            ],
+            [
+                12.565268487599894,
+                55.67858616472196
+            ],
+            [
+                12.565217225773324,
+                55.67881738963507
+            ]
+        ]
+    }
+}

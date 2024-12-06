@@ -189,7 +189,6 @@ def update_output(tour, tour_dates, clickData, n_clicks):
 
         # Now I need a new data frame, where I store each unique venue and its geocodes.
         mydata = mydata.groupby('venue').agg({'venue': 'count', 'geocodeLat': 'mean', 'geocodeLon': 'mean'})
-        print(mydata)
 
         # name the columns
         mydata.columns = ['count', 'geocodeLat', 'geocodeLon']

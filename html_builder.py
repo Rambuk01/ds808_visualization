@@ -77,9 +77,12 @@ def get_dropdowns(dropdown_options: dict):
     dropdowns = html.Div(
         className="dropdowns w100",
         children=[
-            html.H1(children="Airbnb - Copenhagen"),
+            html.H1(children="The Airbnb Host Helper"),
             html.Div(className="spacer-1", children=''),
-            html.P(className="para", children="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Praesentium laboriosam sequi et velit, incidunt eaque tempore commodi enim, nemo ipsum odit distinctio error nihil in possimus. Debitis voluptate ratione perspiciatis!"),
+            html.H4(className="para", children="Explore Copenhagens Airbnb Market: Visualize Pricing Patterns and Property Details by Neighborhood."),
+            html.Div(className="spacer-1", children=''),
+            html.P(className="para", children="Unlock valuable insights into Copenhagens Airbnb market with a host-focused approach giving insights into pricing based on seasons or apartment details."),
+
             html.Div(className="spacer-1", children=''),
             html.H2(children="Filter Map"),
             html.Div(className='flex flex-space-around', children=[

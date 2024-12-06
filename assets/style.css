@@ -34,16 +34,26 @@ html, body {
 .info-right-wrapper {
     transform-origin: top right; /* Anchor the scaling at the top center */
     transition: transform 0.3s ease-in-out; /* Smooth transition for the transform property */
+    
+}
+.flex-center {
+    justify-content: center;
+}
+/*
+.info-right-wrapper:hover {
+    transform: scale(2);
     z-index: 1000;
 }
-
-.info-right-wrapper:hover {
-    transform: scale(2); /* Apply scale transformation on hover */
-}
-
+*/
 /* GENERAL SETTINGS */
+.left {
+    text-align: left;
+}
 .none {
     display: none;
+}
+.box {
+    display: inline-block;
 }
 .h {
     height: 500px;
@@ -93,6 +103,12 @@ html, body {
 .w33 {
     width: 33%;
 }
+.w40 {
+    width: 40%;
+}
+.w45 {
+    width: 45%;
+}
 .w50 {
     width: 50%;
 }
@@ -107,6 +123,10 @@ html, body {
 .bd {
     border: 1px solid black;
     /*border-radius: 12px;*/
+}
+
+.br {
+    border-radius: 12px;
 }
 
 .m1 {

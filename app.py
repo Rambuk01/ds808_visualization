@@ -50,14 +50,29 @@ sidebar_wrapper = html.Div(
     className = 'sidebar-container w25 p1 box-shadow',
     children=[
         dropdowns,
+        html.Div(className="spacer-2", children=''),
+        html.Div(className="logo flex flex-center bd", children=[
+                html.Img(src="/assets/hosthelper.png", style={"width": "100%"}),
+            ]
+        ),
         #plot_type_dropdown,
     ],
     style={'height': 1295}
 )
 
-info_right = html.Div(className='info-right', children=[
-    #html.H1(className='header', children="Info right"),
-    sun_pie
+info_right = html.Div(className='info-right flex', children=[
+    sun_pie,
+    html.Div(className='info-right-text m1', children=[
+        html.H1(className='header left', children="General information"),
+        html.Div(className="spacer-1", children=''),
+        html.P(className='para', children="This bar chart provides an overview of the distribution of Airbnb listings across different neighborhoods in Copenhagen."),
+        html.Div(className="spacer-2", children=''),
+        html.H4(className='header left', children=["Room Type Distribution"]),
+        html.H4(className='header left', children=["by Neighbourhood - Copenhagen"]),
+        html.P(className='para m1', children="Total rooms: 12543"),
+        html.P(className='para m1', children="Average price: 956,-"),
+    ]),
+    
 ])
 
 
@@ -80,10 +95,10 @@ content_wrapper = html.Div(
         html.H1(className='header none',children="Airbnb - Copenhagen"),
         
         html.Div(className='top-content flex flex-space-evenly', children=[
-            html.Div(className='map-wrapper bd w60 m1 p1 bgw box-shadow' ,children=[
+            html.Div(className='map-wrapper bd w40 m1 p1 bgw box-shadow' ,children=[
                 map_html,
             ]),
-            html.Div(className='info-right-wrapper bd w50 m1 bgw box-shadow', children=[
+            html.Div(className='info-right-wrapper bd fg1 m1 bgw box-shadow', children=[
                 info_right,
             ]),
         ]),
@@ -107,6 +122,8 @@ app.layout = html.Div(className='page flex flex-space-around', children=[
 @app.callback(
     [
         Output(component_id='cph-map', component_property='figure'),
+        Output(component_id='violin-plot', component_property='clickData'),
+        Output(component_id='violin-plot', component_property='selectedData')
     ],
     [
         Input(component_id='room_types', component_property='value'),
@@ -114,29 +131,34 @@ app.layout = html.Div(className='page flex flex-space-around', children=[
     ]
 )
 def generate_map(room_types, map_type):
-    ndata = data
+    ndata = data[data['price'] < 7000]
     if room_types != 'all':
         ndata = ndata[ndata['room_type'] == room_types]
     
-    if(map_type != 'choropleth'):
+    if map_type != 'choropleth':
         fig = px.scatter_mapbox(
-                            data_frame=ndata,
-                            title=f"Airbnb Listings - {room_types}" if room_types != "all" else "Airbnb Listings - All Room Types",
-                            lat="latitude",
-                            lon="longitude",
-                            #hover_name="id",
-                            hover_data=["neighbourhood_cleansed"],
-                            size="price",
-                            color="price",
-                            #size_max=15,
-                            center={"lat": 55.6761, "lon": 12.5683},
-                            zoom=10,
-                            height=map_height,
-                            mapbox_style="open-street-map")
+            data_frame=ndata,
+            title=f"Airbnb Listings - {room_types}" if room_types != "all" else "Airbnb Listings - All Room Types",
+            lat="latitude",
+            lon="longitude",
+            hover_data=["neighbourhood_cleansed", "id"],
+            size="price",
+            color="price",
+            color_continuous_scale=[
+                #"rgba(0, 0, 0, 1)",  # Black for lowest prices
+                "rgba(239, 11, 22, 0.89)",   # Bright red for highest prices
+                #"rgba(100, 3, 8, 0.89)",  # Dark red (close to black)
+                "rgba(50, 3, 8, 0.89)",  # Dark red (close to black)
+
+            ],
+            center={"lat": 55.6741, "lon": 12.5683},
+            zoom=10,
+            height=map_height,
+            mapbox_style="open-street-map"
+        )
     
     if(map_type == 'choropleth'):
         df_mean_prices = functions.get_mean_prices(ndata, geojson_data)
-
         # Create a basic map using the GeoJSON data
         fig = px.choropleth_mapbox(
             df_mean_prices,
@@ -147,7 +169,7 @@ def generate_map(room_types, map_type):
             mapbox_style="carto-positron",
             hover_name="neighbourhood_cleansed",   # Show area name in the hover info
             zoom=10.5,
-            center={"lat": 55.6761, "lon": 12.5683},
+            center={"lat": 55.6741, "lon": 12.5683},
             opacity=0.5,
             height=map_height,
             color_continuous_scale=[
@@ -162,26 +184,40 @@ def generate_map(room_types, map_type):
     # Enable scroll zoom and set margins
     fig.update_layout(
         margin={"r":0,"t":0,"l":0,"b":0},
-        #scrollZoom=True,  # Enable scroll zooming
-
         mapbox=dict(
             uirevision='constant',  # Keeps zoom level and position when updating
         )
     )
 
-    return [fig]
+    return [fig, None, None] ## None None are placeholders, for the clickdata and selected data.
 
 
 """ VIOLIN AND RIDGE """
 # RIDGE PLOT VIOLIN PLOT - Define a single callback to handle both plot types
 @app.callback(
-    Output("violin-plot", "figure"),  # Use the same output for simplicity
     [
-        Input("plot-type", "value"),  # New input for plot type
-        Input("violin-category", "value"),
+        Output("violin-plot", "figure"),  # Use the same output for simplicity
+    ],
+    [
+        Input("plot-type", component_property="value"),  # New input for plot type
+        Input("violin-category", component_property="value"),
+        Input("cph-map", component_property="clickData"),
+        Input("cph-map", component_property="selectedData"),
     ],
 )
-def generate_plot(plot_type, selected_category):
+def generate_plot(plot_type, selected_category, click_data, selected_data):
+    # IF YOU CLICK ON THE CHOROPLETH MAP
+    if selected_data:
+        listings_to_keep = []
+        for listing in selected_data['points']:
+            id = listing['customdata'][1]
+            listings_to_keep.append(id)
+        
+    if click_data:
+        hovertext = click_data['points'][0]['hovertext']
+        id = click_data['points'][0]['location']
+        listings_to_keep = data[data['neighbourhood_cleansed'] == hovertext]
+    
     violin_yaxis = [0, 3000]
 
     # Define colors for specific categories
@@ -196,6 +232,12 @@ def generate_plot(plot_type, selected_category):
 
     elif selected_category == "season":
         filtered_data = ms_df[ms_df["category"].isin(season_names)]
+        """
+        filtered_data['price'] = filtered_data.apply(
+            lambda row: row['price'] * 1.5 if row['category'] == 'Summer' else row['price'],
+            axis=1
+        )
+        """
         category_labels = season_names  # Use the predefined order of seasons
         x_label = "Season"
         custom_colors = {
@@ -218,6 +260,13 @@ def generate_plot(plot_type, selected_category):
 
     # Remove extreme outliers
     filtered_data = functions.handle_outliers(filtered_data)
+
+    # IF YOU CLICK ON THE CHOROPLETH MAP!
+    if click_data:
+        filtered_data = filtered_data[filtered_data['listing_id'].isin(listings_to_keep['id'])]
+    
+    if selected_data:
+        filtered_data = filtered_data[filtered_data['listing_id'].isin(listings_to_keep)]
 
     # Generate the plot based on plot type
     if plot_type == "violin":
@@ -295,7 +344,7 @@ def generate_plot(plot_type, selected_category):
             margin={"r": 0, "t": 30, "l": 20, "b": 20},
         )
 
-    return fig
+    return [fig]
 
 """ PIE, SUNBURST, BAR """
 @app.callback(
@@ -317,6 +366,8 @@ def generate_sunburst_pie(plot_type):
         "Amager Vest": "Amager V.",
         # Add more replacements if needed
     })
+
+
 
     if plot_type == "sunburst":
         # Create a Sunburst chart
@@ -368,13 +419,14 @@ def generate_sunburst_pie(plot_type):
             "Amager Vest": "Amager V.",
             # Add more replacements if needed
         })
+        bar_data = bar_data.sort_values(by='count', ascending=False)
         # Create a Bar chart
         fig = px.bar(
             bar_data,
             x="neighbourhood_cleansed",
             y="count",
-            color="neighbourhood_cleansed",  # Optional: Color by neighborhood
-            title="Room Type Distribution by Neighbourhood",
+            #color="neighbourhood_cleansed",  # Optional: Color by neighborhood
+            #title="Room Type Distribution by Neighbourhood",
             height=450,
             width=650,
         )

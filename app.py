@@ -50,7 +50,7 @@ sidebar_wrapper = html.Div(
     className = 'sidebar-container w25 p1 box-shadow',
     children=[
         dropdowns,
-        html.Div(className="spacer-2", children=''),
+        html.Div(className="", children='', style={'height': '282px'}),
         html.Div(className="logo flex flex-center bd", children=[
                 html.Img(src="/assets/hosthelper.png", style={"width": "100%"}),
             ]
@@ -208,10 +208,10 @@ def generate_map(room_types, map_type):
 def generate_plot(plot_type, selected_category, click_data, selected_data):
     # IF YOU CLICK ON THE CHOROPLETH MAP
     if selected_data:
-        listings_to_keep = []
+        listings_to_keep = {'id': []}
         for listing in selected_data['points']:
             id = listing['customdata'][1]
-            listings_to_keep.append(id)
+            listings_to_keep['id'].append(id)
         
     if click_data:
         hovertext = click_data['points'][0]['hovertext']
@@ -262,11 +262,9 @@ def generate_plot(plot_type, selected_category, click_data, selected_data):
     filtered_data = functions.handle_outliers(filtered_data)
 
     # IF YOU CLICK ON THE CHOROPLETH MAP!
-    if click_data:
-        filtered_data = filtered_data[filtered_data['listing_id'].isin(listings_to_keep['id'])]
-    
-    if selected_data:
-        filtered_data = filtered_data[filtered_data['listing_id'].isin(listings_to_keep)]
+    if click_data or selected_data:
+        key = 'id' if selected_category == 'bedrooms' else key == 'listing_id'
+        filtered_data = filtered_data[filtered_data[key].isin(listings_to_keep['id'])]
 
     # Generate the plot based on plot type
     if plot_type == "violin":
@@ -280,9 +278,9 @@ def generate_plot(plot_type, selected_category, click_data, selected_data):
             box=True,  # Add boxplot inside the violin
             points=False,  # Hide all data points
             title=f"Violin Plot of Prices by {x_label}",
-            color="category" if selected_category in ["month", "season"] else (
-                "day_of_week" if selected_category == "day_of_week" else "bedrooms"
-            ),
+            # color="category" if selected_category in ["month", "season"] else (
+            #     "day_of_week" if selected_category == "day_of_week" else "bedrooms"
+            # ),
             category_orders={
                 "category": category_labels
             } if selected_category in ["month", "season"] else {

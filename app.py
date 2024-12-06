@@ -65,12 +65,12 @@ info_right = html.Div(className='info-right flex', children=[
     html.Div(className='info-right-text m1', children=[
         html.H1(className='header left', children="General information"),
         html.Div(className="spacer-1", children=''),
-        html.P(className='para', children="This bar chart provides an overview of the distribution of Airbnb listings across different neighborhoods in Copenhagen."),
+        html.P(id='text-area', className='para', children="This bar chart provides an overview of the distribution of Airbnb listings across different neighborhoods in Copenhagen."),
         html.Div(className="spacer-2", children=''),
         html.H4(className='header left', children=["Room Type Distribution"]),
-        html.H4(className='header left', children=["by Neighbourhood - Copenhagen"]),
-        html.P(className='para m1', children="Total rooms: 12543"),
-        html.P(className='para m1', children="Average price: 956,-"),
+        html.H4(id='neighborhood-name', className='header left', children=["by Neighbourhood - Copenhagen"]),
+        html.P(id='count', className='para m1', children="Total rooms: 12543"),
+        html.P(id='avg-price', className='para m1', children="Average price: 956,-"),
     ]),
     
 ])
@@ -117,21 +117,43 @@ app.layout = html.Div(className='page flex flex-space-around', children=[
     sidebar_wrapper,
     content_wrapper
 ])
+"""
+@app.callback([
+        Input("cph-map", component_property="clickData"),
+        Input("cph-map", component_property="selectedData"),
+    ],
+    [
 
+    ]
+)
+"""
 """ MAP """
 @app.callback(
     [
         Output(component_id='cph-map', component_property='figure'),
+
         Output(component_id='violin-plot', component_property='clickData'),
-        Output(component_id='violin-plot', component_property='selectedData')
+        Output(component_id='violin-plot', component_property='selectedData'),
+
+        Output(component_id='sunburst-chart', component_property='clickData'),
+        Output(component_id='sunburst-chart', component_property='selectedData'),
+
+        Output(component_id='count', component_property='children'),
+        Output(component_id='avg-price', component_property='children'),
+        Output(component_id='text-area', component_property='children'),
+        Output(component_id='neighborhood-name', component_property='children')
     ],
     [
         Input(component_id='room_types', component_property='value'),
         Input(component_id='map-type', component_property='value'),
+        Input(component_id='cph-map', component_property='clickData'),
+        Input(component_id='cph-map', component_property='selectedData'),
+
     ]
 )
-def generate_map(room_types, map_type):
+def generate_map(room_types, map_type, click_data, selected_data):
     ndata = data[data['price'] < 7000]
+    
     if room_types != 'all':
         ndata = ndata[ndata['room_type'] == room_types]
     
@@ -149,7 +171,6 @@ def generate_map(room_types, map_type):
                 "rgba(239, 11, 22, 0.89)",   # Bright red for highest prices
                 #"rgba(100, 3, 8, 0.89)",  # Dark red (close to black)
                 "rgba(50, 3, 8, 0.89)",  # Dark red (close to black)
-
             ],
             center={"lat": 55.6741, "lon": 12.5683},
             zoom=10,
@@ -189,7 +210,42 @@ def generate_map(room_types, map_type):
         )
     )
 
-    return [fig, None, None] ## None None are placeholders, for the clickdata and selected data.
+    # Default values for text components
+    total_rooms = f"Total rooms: {len(ndata)}"
+    avg_price = f"Average price: {ndata['price'].mean():.2f},-"
+    text_area = "Click on a neighborhood to see more details."
+    text_area = f"This bar chart provides an overview of the distribution of Airbnb listings across different neighborhoods in Copenhagen."
+    neighborhood_name = f"in Copenhagen."
+    
+    if selected_data:
+        listings_to_keep = {'id': []}
+        for listing in selected_data['points']:
+            id = listing['customdata'][1]
+            listings_to_keep['id'].append(id)
+        neighborhood_data = ndata = ndata[ndata['id'].isin(listings_to_keep['id'])]
+    
+    # Update based on clicked map point
+    if selected_data:
+        text_area = "Here you see the distribution of Airbnb listings across the area you selected."
+        neighborhood_name = 'in the selected area'
+        total_rooms = f"Total rooms: {len(ndata)}"
+        avg_price = f"Average price: {neighborhood_data['price'].mean():.2f},-"
+    elif click_data:
+        clicked_neighborhood = click_data['points'][0]['hovertext']
+        neighborhood_data = ndata[ndata['neighbourhood_cleansed'] == clicked_neighborhood]
+
+        total_rooms = f"Total rooms: {len(neighborhood_data)}"
+        avg_price = f"Average price: {neighborhood_data['price'].mean():.2f},-"
+        text_area = f"Details for ."
+        text_area = f"Here you see the distribution of Airbnb listings across {clicked_neighborhood}."
+        neighborhood_name = f"by Neighbourhood - {clicked_neighborhood}"
+    
+    
+
+
+
+
+    return [fig, None, None, None, None, total_rooms, avg_price, text_area, neighborhood_name] ## None None are placeholders, for the clickdata and selected data.
 
 
 """ VIOLIN AND RIDGE """
@@ -263,7 +319,7 @@ def generate_plot(plot_type, selected_category, click_data, selected_data):
 
     # IF YOU CLICK ON THE CHOROPLETH MAP!
     if click_data or selected_data:
-        key = 'id' if selected_category == 'bedrooms' else key == 'listing_id'
+        key = 'id' if selected_category == 'bedrooms' else 'listing_id'
         filtered_data = filtered_data[filtered_data[key].isin(listings_to_keep['id'])]
 
     # Generate the plot based on plot type
@@ -349,21 +405,43 @@ def generate_plot(plot_type, selected_category, click_data, selected_data):
     Output("sunburst-chart", 'figure'),
     [
         Input("plot-type", "value"),
+        Input(component_id='cph-map', component_property='clickData'),
+        Input(component_id='cph-map', component_property='selectedData'),
     ],
 )
-def generate_sunburst_pie(plot_type):
-    plot_type = 'bar'
+def generate_sunburst_pie(plot_type, click_data, selected_data):
+    ndata = data
+    # PLOT TYPE
+    plot_type = 'pie' if click_data or selected_data else 'bar'
+
+    # IF YOU SELECT ON THE MAP
+    if selected_data:
+        listings_to_keep = {'id': []}
+        for listing in selected_data['points']:
+            id = listing['customdata'][1]
+            listings_to_keep['id'].append(id)
+        
+    if click_data:
+        hovertext = click_data['points'][0]['hovertext']
+        id = click_data['points'][0]['location']
+        listings_to_keep = data[data['neighbourhood_cleansed'] == hovertext]
+
+    if selected_data or click_data:
+        ndata = ndata[ndata['id'].isin(listings_to_keep['id'])]
+        ndata = ndata.groupby(['room_type']).size().reset_index(name='count')
+        print(ndata)
+
+
     # Shorten long names in the 'neighbourhood_cleansed' column
     #ndata = data.groupby(['neighbourhood_cleansed', 'room_type']).agg({'room_type':'count'})        
-    ndata = data.groupby(['neighbourhood_cleansed', 'room_type']).size().reset_index(name='count')
-    ndata['neighbourhood_cleansed'] = ndata['neighbourhood_cleansed'].replace({
-        "Vesterbro-Kongens Enghave": "Vesterbro",
-        "Brønshøj-Husum": "Brønshøj",
-        "Frederiksberg": "Frb",
-        "Amager Øst": "Amager Ø.",
-        "Amager Vest": "Amager V.",
-        # Add more replacements if needed
-    })
+    # ndata = ndata.groupby(['neighbourhood_cleansed', 'room_type']).size().reset_index(name='count')
+    # ndata['neighbourhood_cleansed'] = ndata['neighbourhood_cleansed'].replace({
+    #     "Vesterbro-Kongens Enghave": "Vesterbro",
+    #     "Brønshøj-Husum": "Brønshøj",
+    #     "Amager Øst": "Amager Ø.",
+    #     "Amager Vest": "Amager V.",
+    #     # Add more replacements if needed
+    # })
 
 
 
@@ -379,21 +457,21 @@ def generate_sunburst_pie(plot_type):
         )
     elif plot_type == "pie":
         # Aggregate data for a pie chart
-        pie_data = data.groupby("neighbourhood_cleansed").size().reset_index(name='count')
-        pie_data['neighbourhood_cleansed'] = pie_data['neighbourhood_cleansed'].replace({
-            "Vesterbro-Kongens Enghave": "Vesterbro",
-            "Brønshøj-Husum": "Brønshøj",
-            "Frederiksberg": "Frb",
-            "Amager Øst": "Amager Ø.",
-            "Amager Vest": "Amager V.",
-            # Add more replacements if needed
-        })
+        # pie_data = data.groupby("neighbourhood_cleansed").size().reset_index(name='count')
+        # pie_data['neighbourhood_cleansed'] = pie_data['neighbourhood_cleansed'].replace({
+        #     "Vesterbro-Kongens Enghave": "Vesterbro",
+        #     "Brønshøj-Husum": "Brønshøj",
+        #     "Frederiksberg": "Frb",
+        #     "Amager Øst": "Amager Ø.",
+        #     "Amager Vest": "Amager V.",
+        #     # Add more replacements if needed
+        # })
         # Create a Pie chart
         fig = px.pie(
-            pie_data,
-            names="neighbourhood_cleansed",
+            ndata,
+            names="room_type",
             values="count",
-            color="neighbourhood_cleansed",  # Optional: Color by room type
+            color="room_type",  # Optional: Color by room type
             #title="Room Type Distribution",
             height=450,
             width=450,

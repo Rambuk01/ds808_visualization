@@ -70,12 +70,11 @@ info_right = html.Div(className='info-right flex', children=[
         html.H4(className='header left', children=["Room Type Distribution"]),
         html.H4(id='neighborhood-name', className='header left', children=["by Neighbourhood - Copenhagen"]),
         html.P(id='count', className='para m1', children="Number of rooms: 12543", style={"margin-bottom": "12px", "margin-left": "25px"}),
-        html.P(className='para', children="Average prices"),
-        html.P(id='avg-price-apt', className='para m1', children="Private room: 532,-", style={"margin-left": "25px"}),
-        html.P(id='avg-price-private', className='para m1', children="Entire home / apartment: 1145,-", style={"margin-left": "25px"}),
-        html.P(id='avg-price', className='para m1', children="Total: 956,-", style={"margin-left": "25px"}),
+        html.P(className='para bold', children="Average prices"),
+        html.P(id='avg-price-apt', className='para m1 text-box-blue', children="Private room: 532,-", style={"margin-left": "25px"}),
+        html.P(id='avg-price-private', className='para m1 text-box-red', children="Entire home / apartment: 1145,-", style={"margin-left": "25px"}),
+        html.P(id='avg-price', className='para m2 text-right', children="Total: 956,-", style={"margin-left": "25px"}),
     ]),
-    
 ])
 
 
@@ -417,38 +416,54 @@ def generate_plot(plot_type, selected_category, click_data, selected_data):
 
     return [fig]
 
-""" PIE, SUNBURST, BAR """
 @app.callback(
-    Output("sunburst-chart", 'figure'),
     [
-        Input("plot-type", "value"),
-        Input(component_id='cph-map', component_property='clickData'),
-        Input(component_id='cph-map', component_property='selectedData'),
+        Output("sunburst-chart", "figure"),
+        Output("cph-map", "clickData"),       # Reset clickData
+        Output("cph-map", "selectedData"),    # Reset selectedData
+    ],
+    [
+        Input("map-type", "value"),
+        Input("cph-map", "clickData"),
+        Input("cph-map", "selectedData"),
     ],
 )
-def generate_sunburst_pie(plot_type, click_data, selected_data):
+def generate_sunburst_pie(map_type, click_data, selected_data):
     ndata = data
-    # PLOT TYPE
-    plot_type = 'pie' if click_data or selected_data else 'bar'
 
-    # IF YOU SELECT ON THE MAP
+    # Determine which input triggered the callback
+    triggered_id = ctx.triggered_id
+
+    # Reset logic: If map type changes, reset clickData and selectedData
+    if triggered_id == "map-type":
+        return generate_chart('bar', ndata), None, None
+
+    # Handle map interactions
     if selected_data:
         listings_to_keep = {'id': []}
         for listing in selected_data['points']:
             id = listing['customdata'][1]
             listings_to_keep['id'].append(id)
-        
-    if click_data:
-        hovertext = click_data['points'][0]['hovertext']
-        id = click_data['points'][0]['location']
-        listings_to_keep = data[data['neighbourhood_cleansed'] == hovertext]
-
-    if selected_data or click_data:
         ndata = ndata[ndata['id'].isin(listings_to_keep['id'])]
         ndata = ndata.groupby(['room_type']).size().reset_index(name='count')
+        plot_type = "pie"  # Default to Pie when selectedData is present
+    elif click_data:
+        hovertext = click_data['points'][0]['hovertext']
+        listings_to_keep = data[data['neighbourhood_cleansed'] == hovertext]
+        ndata = ndata[ndata['id'].isin(listings_to_keep['id'])]
+        ndata = ndata.groupby(['room_type']).size().reset_index(name='count')
+        plot_type = "pie"  # Default to Pie when clickData is present
+    else:
+        # Default behavior when no interaction occurs
+        plot_type = "bar"
 
+    # Generate the appropriate chart
+    return generate_chart(plot_type, ndata), None, None
+
+
+def generate_chart(plot_type, ndata):
+    print(plot_type)
     if plot_type == "sunburst":
-        ndata = ndata.groupby(['neighbourhood_cleansed', 'room_type']).agg({'room_type':'count'})        
         ndata = ndata.groupby(['neighbourhood_cleansed', 'room_type']).size().reset_index(name='count')
         ndata['neighbourhood_cleansed'] = ndata['neighbourhood_cleansed'].replace({
             "Vesterbro-Kongens Enghave": "Vesterbro",
@@ -456,37 +471,30 @@ def generate_sunburst_pie(plot_type, click_data, selected_data):
             "Amager Øst": "Amager Ø.",
             "Amager Vest": "Amager V.",
         })
-
-        # Create a Sunburst chart
         fig = px.sunburst(
             ndata,
-            path=["neighbourhood_cleansed", "room_type"],  # Hierarchical levels
-            values="count",  # Use the count for the size of the segments
-            color="room_type",  # Optional: Color by room type
+            path=["neighbourhood_cleansed", "room_type"],
+            values="count",
+            color="room_type",
             height=450,
             width=450,
         )
-    
-    if plot_type == "pie":
-        # Create a Pie chart
+    elif plot_type == "pie":
         fig = px.pie(
             ndata,
             names="room_type",
             values="count",
-            color="room_type",  # Optional: Color by room type
+            color="room_type",
             height=450,
             width=450,
         )
-        # Update the layout and add labels inside the pie chart
         fig.update_traces(
-            textinfo="label+value",  # Display both label (name) and value (count) inside the chart
-            textposition="inside",  # Position the text inside the pie segments
-            insidetextorientation="radial"  # Orient text radially for better readability
+            textinfo="label+value",
+            textposition="inside",
+            insidetextorientation="radial"
         )
-        # Remove the legend
         fig.update_layout(showlegend=False)
     elif plot_type == "bar":
-        # Aggregate data for a bar chart
         bar_data = data.groupby("neighbourhood_cleansed").size().reset_index(name='count')
         bar_data['neighbourhood_cleansed'] = bar_data['neighbourhood_cleansed'].replace({
             "Vesterbro-Kongens Enghave": "Vesterbro",
@@ -494,24 +502,19 @@ def generate_sunburst_pie(plot_type, click_data, selected_data):
             "Frederiksberg": "Frb",
             "Amager Øst": "Amager Ø.",
             "Amager Vest": "Amager V.",
-            # Add more replacements if needed
         })
         bar_data = bar_data.sort_values(by='count', ascending=False)
-        # Create a Bar chart
         fig = px.bar(
             bar_data,
             x="neighbourhood_cleansed",
             y="count",
-            #color="neighbourhood_cleansed",  # Optional: Color by neighborhood
-            #title="Room Type Distribution by Neighbourhood",
             height=450,
             width=650,
         )
-        # Update bar chart layout for better readability
         fig.update_layout(
             xaxis_title="Neighbourhood",
             yaxis_title="Count",
-            showlegend=False  # Optionally hide the legend
+            showlegend=False
         )
     else:
         raise ValueError("Invalid plot_type. Use 'sunburst', 'pie', or 'bar'.")

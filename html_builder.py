@@ -1,6 +1,7 @@
 import dash
 from dash.dependencies import Input, Output, State
-from dash import dcc, ctx
+from dash import dcc
+from dash import callback_context as ctx
 from dash import html
 import plotly.express as px
 import random

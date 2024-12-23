@@ -51,6 +51,7 @@ def get_dropdowns(dropdown_options: dict):
     )
 
     # New dropdowns
+    #room_type,accommodates,bedrooms,beds,price,bathrooms
     dropdown_violin_category = dcc.Dropdown(
         id='violin-category',
         options=[
@@ -58,6 +59,9 @@ def get_dropdowns(dropdown_options: dict):
             {"label": "Seasons", "value": "season"},
             {"label": "Week days", "value": "day_of_week"},
             {"label": "Bedrooms", "value": "bedrooms"},
+            {"label": "Accommodates", "value": "accommodates"},
+            {"label": "Bathrooms", "value": "bathrooms"},
+            {"label": "Beds", "value": "beds"},
         ],
         value="month",  # Default to months
         clearable=False,

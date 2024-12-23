@@ -70,10 +70,10 @@ info_right = html.Div(className='info-right flex', children=[
         html.H4(className='header left', children=["Room Type Distribution"]),
         html.H4(id='neighborhood-name', className='header left', children=["by Neighbourhood - Copenhagen"]),
         html.P(id='count', className='para m1', children="Number of rooms: 12543", style={"margin-bottom": "12px", "margin-left": "25px"}),
-        html.P(className='para', children="Average prices"),
-        html.P(id='avg-price-apt', className='para m1', children="Private room: 532,-", style={"margin-left": "25px"}),
-        html.P(id='avg-price-private', className='para m1', children="Entire home / apartment: 1145,-", style={"margin-left": "25px"}),
-        html.P(id='avg-price', className='para m1', children="Total: 956,-", style={"margin-left": "25px"}),
+        html.P(className='para bold', children="Average prices"),
+        html.P(id='avg-price-apt', className='para m1 text-box-blue', children="Private room: 532,-", style={"margin-left": "25px"}),
+        html.P(id='avg-price-private', className='para m1 text-box-red', children="Entire home / apartment: 1145,-", style={"margin-left": "25px"}),
+        html.P(id='avg-price', className='para m1 text-right', children="Total: 956,-", style={"margin-left": "25px"}),
     ]),
     
 ])
@@ -257,7 +257,7 @@ def generate_map(room_types, map_type, click_data, selected_data):
         text_area = f"Here you see the distribution of Airbnb listings across {clicked_neighborhood}."
         neighborhood_name = f"by Neighbourhood - {clicked_neighborhood}"
     
-    avg_price = f"Total: {ndata['price'].mean():.2f},-"
+    avg_price = f"Total average: {ndata['price'].mean():.2f},-"
     total_rooms = f"Number of rooms: {len(ndata)}"
     apt = f"Entire home / apartment: {ndata['price'][ndata['room_type'] == 'Entire home/apt'].mean():.2f},-"
     private = f"Private room: {ndata['price'][ndata['room_type'] == 'Private room'].mean():.2f},-"
@@ -324,9 +324,9 @@ def generate_plot(plot_type, selected_category, click_data, selected_data):
         category_labels = day_names  # Use the predefined order of days
         x_label = "Day of the Week"
 
-    elif selected_category == 'bedrooms':
+    elif selected_category in ['bedrooms', 'beds', 'accommodates', 'bathrooms']:
         filtered_data = data[data['bedrooms'] != -1]
-        category_labels = sorted(filtered_data["bedrooms"].unique())  # Unique bedroom counts sorted
+        category_labels = sorted(filtered_data[selected_category].unique())  # Unique bedroom counts sorted
         x_label = "Number of Bedrooms"
         violin_yaxis = [0, 6000]
 
@@ -341,6 +341,7 @@ def generate_plot(plot_type, selected_category, click_data, selected_data):
 
     # Generate the plot based on plot type
     if plot_type == "violin":
+        
         # Generate the violin plot
         fig = px.violin(
             filtered_data,
@@ -481,7 +482,8 @@ def generate_sunburst_pie(plot_type, click_data, selected_data):
         fig.update_traces(
             textinfo="label+value",  # Display both label (name) and value (count) inside the chart
             textposition="inside",  # Position the text inside the pie segments
-            insidetextorientation="radial"  # Orient text radially for better readability
+            insidetextorientation="radial",  # Orient text radially for better readability
+            textfont=dict(color="white"),  # Set text color to white
         )
         # Remove the legend
         fig.update_layout(showlegend=False)

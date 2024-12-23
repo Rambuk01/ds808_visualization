@@ -327,27 +327,25 @@ def generate_plot(plot_type, selected_category, click_data, selected_data):
     elif selected_category in ['bedrooms', 'beds', 'accommodates', 'bathrooms']:
         filtered_data = data[data['bedrooms'] != -1]
         category_labels = sorted(filtered_data[selected_category].unique())  # Unique bedroom counts sorted
-        x_label = "Number of Bedrooms"
+        print(category_labels)
+        x_label = f"Number of {selected_category.title()}"
         violin_yaxis = [0, 6000]
-
 
     # Remove extreme outliers
     filtered_data = functions.handle_outliers(filtered_data)
 
     # IF YOU CLICK ON THE CHOROPLETH MAP!
     if click_data or selected_data:
-        key = 'id' if selected_category == 'bedrooms' else 'listing_id'
+        key = 'id' if selected_category in ['bedrooms', 'beds', 'accommodates', 'bathrooms'] else 'listing_id'
         filtered_data = filtered_data[filtered_data[key].isin(listings_to_keep['id'])]
 
     # Generate the plot based on plot type
     if plot_type == "violin":
-        
+        x = "category" if selected_category in ["month", "season"] else selected_category
         # Generate the violin plot
         fig = px.violin(
             filtered_data,
-            x="category" if selected_category in ["month", "season"] else (
-                "day_of_week" if selected_category == "day_of_week" else "bedrooms"
-            ),
+            x=x,
             y="price",
             box=True,  # Add boxplot inside the violin
             points=False,  # Hide all data points
@@ -360,7 +358,7 @@ def generate_plot(plot_type, selected_category, click_data, selected_data):
             } if selected_category in ["month", "season"] else {
                 "day_of_week": category_labels
             } if selected_category == "day_of_week" else {
-                "bedrooms": category_labels
+                selected_category: category_labels
             },  # Ensure correct order
             color_discrete_map=custom_colors,  # Map custom colors if available
         )

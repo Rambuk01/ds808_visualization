@@ -1,7 +1,7 @@
 * {
     box-sizing: border-box;
     margin: 0px;
-    font-family:Verdana, Geneva, Tahoma, sans-serif
+    font-family: Verdana, Geneva, Tahoma, sans-serif
 }
 
 html, body {
@@ -24,7 +24,9 @@ html, body {
     height: 20px;
 }
 .spacer-2 {
-    height: 40px;
+    height: 20px;
+    border-bottom: 1px solid black;
+    margin-bottom: 20px;
 }
 .header {
     /*style = {'textAlign':'center', 'font-family' : 'Roboto'}*/
@@ -61,7 +63,7 @@ html, body {
 }
 .text-box-red {
     color: white;
-    background-color: rgb(239, 85, 59);
+    background-color: #FF7C43;
     padding: 6px 12px;
     border-radius: 12px;
 }
@@ -166,4 +168,41 @@ h2 {
 }
 .bold {
     font-weight: bold;
+}
+
+/* INPUTS */
+.dash-input {
+    padding: 6px;
+    /*color: #aaa;*/
+    font-size: 16px;
+}
+
+.dash-input::placeholder {
+    color: #aaa;
+    font-size: 16px;
+    opacity: 0.8;
+}
+
+#predict-button {
+    margin-top: 20px;
+    padding: 12px 20px;
+    background-color: cornflowerblue;
+    color: white;
+    border-radius: 12px;
+    border: 0px;
+
+}
+#predict-button:hover {
+    /*transform: scale(1.2);*/
+}
+
+
+.radio-wrapper>div {
+    display: flex;
+}
+.radio-wrapper>div>label {
+    margin: 12px;
+}
+.radio-wrapper>div>label>input {
+    margin-right: 6px;
 }

@@ -1,0 +1,27 @@
+---
+title: "vis_exam_ml"
+output: html_document
+date: "2024-12-23"
+---
+
+```{r}
+df <- read.csv("archive/listings_cleaned_v2.csv", sep = ",", header = TRUE)
+df
+```
+```{r}
+# Drop a column named "column_name"
+df <- df[, !names(df) %in% "id"]
+```
+
+```{r}
+df$neighbourhood_cleansed <- as.factor(df$neighbourhood_cleansed)
+df$room_type <- as.factor(df$room_type)
+```
+
+```{r}
+# pairs(df)
+cor(df)
+```
+
+
+

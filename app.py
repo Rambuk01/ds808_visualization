@@ -25,7 +25,7 @@ with open('archive/cph_fred_dist.geojson') as f:
 
 types = data['room_type'].unique()
 room_type_options = [{'label': i, 'value': i} for i in types]
-room_type_options.append({'label': 'Any room type', 'value': 'all'})
+room_type_options.append({'label': 'All room types', 'value': 'all'})
 dropdown_options = {'room_type_options': room_type_options}
 
 # Convert date column to datetimes. Then convert them to year strings.
@@ -50,7 +50,7 @@ sidebar_wrapper = html.Div(
     className = 'sidebar-container w25 p1 box-shadow',
     children=[
         dropdowns,
-        html.Div(className="", children='', style={'height': '282px'}),
+        html.Div(className="", children='', style={'height': '60px'}),
         html.Div(className="logo flex flex-center bd", children=[
                 html.Img(src="/assets/hosthelper.png", style={"width": "100%"}),
             ]
@@ -69,13 +69,12 @@ info_right = html.Div(className='info-right flex', children=[
         html.Div(className="spacer-2", children=''),
         html.H4(className='header left', children=["Room Type Distribution"]),
         html.H4(id='neighborhood-name', className='header left', children=["by Neighbourhood - Copenhagen"]),
-        html.P(id='count', className='para m1', children="Number of rooms: 12543", style={"margin-bottom": "12px", "margin-left": "25px"}),
+        html.P(id='count', className='para m1', children="Number of rooms: 12543", style={"marginBottom": "12px", "marginLeft": "25px"}),
         html.P(className='para bold', children="Average prices"),
-        html.P(id='avg-price-apt', className='para m1 text-box-blue', children="Private room: 532,-", style={"margin-left": "25px"}),
-        html.P(id='avg-price-private', className='para m1 text-box-red', children="Entire home / apartment: 1145,-", style={"margin-left": "25px"}),
-        html.P(id='avg-price', className='para m1 text-right', children="Total: 956,-", style={"margin-left": "25px"}),
+        html.P(id='avg-price-apt', className='para m1 text-box-blue', children="Private room: 532,-", style={"marginLeft": "25px"}),
+        html.P(id='avg-price-private', className='para m1 text-box-red', children="Entire home / apartment: 1145,-", style={"marginLeft": "25px"}),
+        html.P(id='avg-price', className='para m1 text-right', children="Total: 956,-", style={"marginLeft": "25px"}),
     ]),
-    
 ])
 
 
@@ -86,10 +85,12 @@ violin_plot_wrapper = html.Div(
         ],
     )
 info_bottom = html.Div(className='info-bottom', children=[
-    html.H1(className='header', children="Info Bottom"),
+    # html.H1(className='header', children="Info Bottom"),
     # Add a container for the violin plot
-    violin_plot_wrapper
+    violin_plot_wrapper,
 ])
+
+predict_content = get_predict_content()
 
 content_wrapper = html.Div(
     className = 'content-wrapper w100',
@@ -105,10 +106,17 @@ content_wrapper = html.Div(
                 info_right,
             ]),
         ]),
-        html.Div(className='info-bottom-wrapper w60 bd m1 p1 bgw box-shadow', children=[
-            info_bottom,
+        html.Div(className='flex flex-space-evenly', children=[
+            html.Div(className='info-bottom-wrapper w60 bd m1 p1 bgw box-shadow', children=[
+                info_bottom,
+            ]),
+            html.Div(
+                className='predict-wrapper w40 bd m1 p1 bgw box-shadow',
+                children=[
+                    predict_content
+                ]
+            )
         ])
-        
     ]
 )
 
@@ -339,8 +347,17 @@ def generate_plot(plot_type, selected_category, click_data, selected_data):
         key = 'id' if selected_category in ['bedrooms', 'beds', 'accommodates', 'bathrooms'] else 'listing_id'
         filtered_data = filtered_data[filtered_data[key].isin(listings_to_keep['id'])]
 
+    # Handle some values with very low counts depending on selected_category
+    #f selected_category in ['beds', 'accommodates', 'bathrooms']:
+    #    if
+
     # Generate the plot based on plot type
     if plot_type == "violin":
+        violin_colors = None
+        if selected_category == 'season':
+            violin_colors = "category" if selected_category in ["month", "season"] else (
+                    "day_of_week" if selected_category == "day_of_week" else "bedrooms"
+                )
         x = "category" if selected_category in ["month", "season"] else selected_category
         # Generate the violin plot
         fig = px.violin(
@@ -350,9 +367,7 @@ def generate_plot(plot_type, selected_category, click_data, selected_data):
             box=True,  # Add boxplot inside the violin
             points=False,  # Hide all data points
             title=f"Violin Plot of Prices by {x_label}",
-            # color="category" if selected_category in ["month", "season"] else (
-            #     "day_of_week" if selected_category == "day_of_week" else "bedrooms"
-            # ),
+            color=violin_colors,
             category_orders={
                 "category": category_labels
             } if selected_category in ["month", "season"] else {
@@ -368,8 +383,16 @@ def generate_plot(plot_type, selected_category, click_data, selected_data):
             yaxis_range=violin_yaxis,  # Set the y-axis range
             margin={"r": 0, "t": 30, "l": 20, "b": 20},
             height=600,
-            #plot_bgcolor=plot_bgcolor,  # Background of the plotting area
+            #plot_bgcolor="#f4f4f4",  # Background of the plot area
+            #paper_bgcolor="#ffffff"  # Background of the entire figure
+            plot_bgcolor='#fff', #plot_bgcolor,  # Background of the plotting area
             #paper_bgcolor=paper_bgcolor,  # Background of the entire figure
+            yaxis=dict(
+                gridcolor="lightblue",  # Horizontal gridline color
+                gridwidth=1,            # Horizontal gridline width
+                zerolinecolor="blue",   # Zero line color (if applicable)
+                zerolinewidth=2         # Zero line width (if applicable)
+            ),
         )
     elif plot_type == "ridgeline":
         # Generate the ridgeline plot
@@ -387,7 +410,8 @@ def generate_plot(plot_type, selected_category, click_data, selected_data):
             fig.add_trace(
                 go.Violin(
                     x=data_subset,
-                    line_color=custom_colors[category] if selected_category == "season" else color,
+                    #line_color=custom_colors[category] if selected_category == "season" else color,
+                    line_color='blue',
                     name=str(category),  # Use the bedroom count as the name
                     spanmode="hard",  # Ensures traces don't overlap vertically
                 )
@@ -472,7 +496,11 @@ def generate_sunburst_pie(plot_type, click_data, selected_data):
             ndata,
             names="room_type",
             values="count",
-            color="room_type",  # Optional: Color by room type
+            color="room_type",
+            color_discrete_map={
+                "Entire home/apt": '#636EFF',
+                "Private room": '#FF7C43',
+            },
             height=450,
             width=450,
         )
@@ -491,7 +519,6 @@ def generate_sunburst_pie(plot_type, click_data, selected_data):
         bar_data['neighbourhood_cleansed'] = bar_data['neighbourhood_cleansed'].replace({
             "Vesterbro-Kongens Enghave": "Vesterbro",
             "Brønshøj-Husum": "Brønshøj",
-            "Frederiksberg": "Frb",
             "Amager Øst": "Amager Ø.",
             "Amager Vest": "Amager V.",
             # Add more replacements if needed
@@ -517,6 +544,40 @@ def generate_sunburst_pie(plot_type, click_data, selected_data):
         raise ValueError("Invalid plot_type. Use 'sunburst', 'pie', or 'bar'.")
 
     return fig
+
+@app.callback(
+    Output('prediction-output', 'children'),
+    [
+        Input('room-type-dropdown', 'value'),
+        Input('neighbourhood-dropdown', 'value'),
+        Input('bedrooms-input', 'value'),
+        Input('beds-input', 'value'),
+        Input('accommodates-input', 'value'),
+    ]
+)
+def predict_price(room_type, neighbourhood, bedrooms, beds, accommodates):
+    # Ensure all inputs are provided
+    if not all([room_type, neighbourhood, bedrooms, beds, accommodates]):
+        return ''
+        return "Please fill in all fields."
+
+    # Prepare input data
+    input_data = pd.DataFrame([{
+        'room_type': room_type,
+        'neighbourhood_cleansed': neighbourhood,
+        'bedrooms': bedrooms,
+        'beds': beds,
+        'accommodates': accommodates
+    }])
+
+    # Convert to dummy variables
+    #input_data = pd.get_dummies(input_data)
+    #input_data = input_data.reindex(columns=X.columns, fill_value=0)  # Match training columns
+
+    # Make prediction
+    #predicted_price = model.predict(input_data)[0]
+    
+    #return f"Predicted Price: {954:.2f} DKK"
 
 
 if __name__ == '__main__':

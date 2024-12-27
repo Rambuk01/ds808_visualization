@@ -32,10 +32,18 @@ def get_map():
     )
     return map
 
+def get_radio_items(id, value, options):
+    radio = html.Div(className='radio-wrapper', children=[
+        dcc.RadioItems(id=id, options=options,
+            value=value
+        )
+    ])
+    return radio
+
 def get_dropdowns(dropdown_options: dict):
     # Existing dropdowns
     dropdown_map_type = dcc.Dropdown(
-        id='map-type',
+        id='map-type_dd',
         options=[
             {'label': 'Choropleth Map', 'value': 'choropleth'},
             {'label': 'Scatter Mapbox', 'value': 'scatter'},
@@ -63,7 +71,7 @@ def get_dropdowns(dropdown_options: dict):
             {"label": "Bathrooms", "value": "bathrooms"},
             {"label": "Beds", "value": "beds"},
         ],
-        value="month",  # Default to months
+        value="season",  # Default to months
         clearable=False,
     )
 
@@ -87,29 +95,41 @@ def get_dropdowns(dropdown_options: dict):
             html.Div(className="spacer-1", children=''),
             html.P(className="para", children="Unlock valuable insights into Copenhagens Airbnb market with a host-focused approach giving insights into pricing based on seasons or apartment details."),
 
+            html.Div(className="spacer-2", children=''),
+            html.H3(children="Select map type"),
+            get_radio_items(id = 'map-type', value = 'choropleth', options=[
+                {'label': 'Choropleth', 'value': 'choropleth'},
+                {'label': 'Scatter Mapbox', 'value': 'scatter_mapbox'},
+            ]),
             html.Div(className="spacer-1", children=''),
-            html.H2(children="Filter Map"),
+            html.H3(children="Select room type"),
             html.Div(className='flex flex-space-around', children=[
                 html.Div(
-                    className="dropdown w50 m1",
+                    className="dropdown w100 m1",
                     children=dropdown_room_type,
                 ),
-                html.Div(
-                    className='dropdown w50 m1',
-                    children=dropdown_map_type,
-                ),
+                # html.Div(
+                #     className='dropdown w50 m1',
+                #     children=dropdown_map_type,
+                # ),
             ]),
             html.Div(className="spacer-2", children=''),
-            html.H2(children="Visualize bottom plot"),
+            html.H3(children="Select distribution-plot type"),
+            get_radio_items(id='plot-type', value = 'violin', options=[
+                            {'label': 'Violin plot', 'value': 'violin'},
+                            {'label': 'Ridgeline plot', 'value': 'ridgeline'},
+                        ]),
+            html.Div(className="spacer-1", children=''),
+            html.H3(children="Visualize bottom plot"),
             html.Div(className='flex flex-space-around', children=[
                 html.Div(
-                    className="dropdown w50 m1",
+                    className="dropdown w100 m1",
                     children=dropdown_violin_category,
                 ),
-                html.Div(
-                    className="dropdown w50 m1",
-                    children=dropdown_plot_type,
-                ),
+                # html.Div(
+                #     className="dropdown w50 m1",
+                #     children=dropdown_plot_type,
+                # ),
             ]),
         ]
     )
@@ -125,3 +145,100 @@ def get_sunburst_and_piechart():
     )
 
     return chart
+
+
+def get_predict_content():
+    content = html.Div(
+        className='predict-content-container',
+        children=[
+            html.H1(children='Predict hosting price per day'),
+            html.Div(className='spacer-1', children=''),
+            html.Div(
+                className='intro-text',
+                children=[
+                    html.P(
+                        """
+                        This tool allows you to estimate Airbnb listing prices based on key parameters such as 
+                        room type, neighborhood, number of bedrooms, and the maximum number of guests 
+                        (accommodates). Simply fill in the details using the dropdowns and input fields below, 
+                        then click the 'Predict' button to see the estimated price interval."""
+                    ),
+                ],
+                style={'marginBottom': '20px'}
+            ),
+            # Dropdowns for categorical variables
+            html.Label("Select Room Type:"),
+            dcc.Dropdown(
+                id='room-type-dropdown',
+                options=[
+                    {'label': 'Entire home/apt', 'value': 'Entire home/apt'},
+                    {'label': 'Private room', 'value': 'Private room'},
+                    {'label': 'Shared room', 'value': 'Shared room'},
+                ],
+                placeholder='Select room type',
+                style={'marginBottom': '20px'}
+            ),
+
+            html.Label("Select Neighbourhood:"),
+            dcc.Dropdown(
+                id='neighbourhood-dropdown',
+                options=[
+                    {'label': 'Nørrebro', 'value': 'Nørrebro'},
+                    {'label': 'Indre By', 'value': 'Indre By'},
+                    {'label': 'Østerbro', 'value': 'Østerbro'},
+                    {'label': 'Frederiksberg', 'value': 'Frederiksberg'},
+                    # Add more options as needed
+                ],
+                placeholder='Select neighbourhood',
+                style={'marginBottom': '20px'}
+            ),
+            html.Div(className='input-container flex flex-space-between', children=[
+                # Number inputs for numeric parameters
+                html.Div(className='input-item', children = [
+                html.Label("Number of Bedrooms:"),
+                dcc.Input(
+                    id='bedrooms-input',
+                    type='number',
+                    placeholder='Bedrooms',
+                )]),
+                html.Div(className='input-item', children = [
+                html.Label("Number of Beds:"),
+                dcc.Input(
+                    id='beds-input',
+                    type='number',
+                    placeholder='Beds',
+                )]),
+                html.Div(className='input-item', children = [
+                html.Label("Accommodates:"),
+                dcc.Input(
+                    id='accommodates-input',
+                    type='number',
+                    placeholder='Accommodates',
+                )]),
+            ]),
+            # Button to trigger prediction
+            html.Button(
+                id='predict-button',
+                children='Predict',
+                style={'marginTop': '20px'}
+            ),
+            html.Div(className="spacer-2", children=''),
+            # Output area
+            html.Div(
+                id='prediction-output',
+                style={'marginTop': '20px', 'fontWeight': 'bold', 'textAlign': 'center'}
+            ),
+            html.Div(id="canvas-container", className='flex flex-center', children=[
+                html.Canvas(
+                    id="myCanvas",
+                    className="box-shadow",
+                    style={"border": "1px solid black", "backgroundColor":"#d6e0f5", "padding":"12px", "borderRadius":"12px"}, 
+                    width=600,
+                    height=100
+                ),
+                html.Script(src="/assets/canvas_script.js"),  # Link to your JavaScript file
+                
+            ], style={'display':'none'})
+        ]
+    )
+    return content

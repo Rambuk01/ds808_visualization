@@ -515,7 +515,8 @@ def generate_sunburst_pie(plot_type, click_data, selected_data):
         fig.update_layout(showlegend=False)
     elif plot_type == "bar":
         # Aggregate data for a bar chart
-        bar_data = data.groupby("neighbourhood_cleansed").size().reset_index(name='count')
+        bar_data = data.groupby(["neighbourhood_cleansed", "room_type"]).size().reset_index(name='count')
+        print(bar_data)
         bar_data['neighbourhood_cleansed'] = bar_data['neighbourhood_cleansed'].replace({
             "Vesterbro-Kongens Enghave": "Vesterbro",
             "Brønshøj-Husum": "Brønshøj",
@@ -529,7 +530,11 @@ def generate_sunburst_pie(plot_type, click_data, selected_data):
             bar_data,
             x="neighbourhood_cleansed",
             y="count",
-            #color="neighbourhood_cleansed",  # Optional: Color by neighborhood
+            color="room_type",
+            color_discrete_map = {
+                "Entire home/apt": "rgb(99, 110, 250)",
+                "Private room": "#FF7C43",
+            },
             #title="Room Type Distribution by Neighbourhood",
             height=450,
             width=650,

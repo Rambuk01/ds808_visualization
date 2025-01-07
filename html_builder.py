@@ -131,6 +131,8 @@ def get_dropdowns(dropdown_options: dict):
                 #     children=dropdown_plot_type,
                 # ),
             ]),
+            html.Div(className="spacer-2", children=''),
+            get_check_list()
         ]
     )
 
@@ -145,7 +147,6 @@ def get_sunburst_and_piechart():
     )
 
     return chart
-
 
 def get_predict_content():
     content = html.Div(
@@ -242,3 +243,15 @@ def get_predict_content():
         ]
     )
     return content
+
+def get_check_list():
+    elem = html.Div(className='check-list-wrapper mt1', children=[
+        dcc.Checklist(
+            id='check-list',
+            options=[
+                {'label': 'Simulated data', 'value': 'true'},
+            ],
+            #value=['false']
+        ),
+    ])
+    return elem

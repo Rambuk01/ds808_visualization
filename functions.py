@@ -67,3 +67,25 @@ def get_gradient_color(value, max_value, color_start=(200, 200, 255), color_end=
     g = int(color_start[1] + (color_end[1] - color_start[1]) * ratio)
     b = int(color_start[2] + (color_end[2] - color_start[2]) * ratio)
     return f"rgb({r},{g},{b})"
+
+def apply_fake_data(df, category:str):
+    print("Applying fake data")
+
+    # Define multipliers for each month
+    multipliers = {
+        "January": 1.,
+        "February": 1.,
+        "March": 1.05,
+        "April": 1.1,
+        "May": 1.15,
+        "June": 1.35,
+        "July": 1.35,
+        "August": 1.2,
+        "September": 1.2,
+        "October": 1.0,
+        "November": 1.,
+        "December": 1.1
+    }
+
+    df['price'] = df["price"] * df["category"].map(multipliers)
+    return df

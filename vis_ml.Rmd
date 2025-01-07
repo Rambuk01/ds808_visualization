@@ -10,7 +10,7 @@ df
 ```
 ```{r}
 # Drop a column named "column_name"
-df <- df[, !names(df) %in% "id"]
+df <- df[, !names(df) %in% "longitude"]
 ```
 
 ```{r}
@@ -19,9 +19,9 @@ df$room_type <- as.factor(df$room_type)
 ```
 
 ```{r}
-# pairs(df)
-cor(df)
+model <- glm(price ~ ., data = df)
+summary(model)
 ```
 
-
+# neighbourhood_cleansed, room_type, accommodates, bedrooms, bathrooms
 

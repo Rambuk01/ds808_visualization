@@ -50,9 +50,9 @@ sidebar_wrapper = html.Div(
     className = 'sidebar-container w25 p1 box-shadow',
     children=[
         dropdowns,
-        html.Div(className="", children='', style={'height': '60px'}),
+        html.Div(className="", children='', style={'height': '30px'}),
         html.Div(className="logo flex flex-center bd", children=[
-                html.Img(src="/assets/hosthelper.png", style={"width": "100%"}),
+                html.Img(src="/assets/hosthelper.png", style={"width": "100%",}),
             ]
         ),
         #plot_type_dropdown,
@@ -280,13 +280,14 @@ def generate_map(room_types, map_type, click_data, selected_data):
         Output("violin-plot", "figure"),  # Use the same output for simplicity
     ],
     [
-        Input("plot-type", component_property="value"),  # New input for plot type
+        Input("plot-type", component_property="value"),
         Input("violin-category", component_property="value"),
         Input("cph-map", component_property="clickData"),
         Input("cph-map", component_property="selectedData"),
+        Input("check-list", component_property='value')
     ],
 )
-def generate_plot(plot_type, selected_category, click_data, selected_data):
+def generate_plot(plot_type, selected_category, click_data, selected_data, fake_data):
     # IF YOU CLICK ON THE CHOROPLETH MAP
     if selected_data:
         listings_to_keep = {'id': []}
@@ -310,6 +311,7 @@ def generate_plot(plot_type, selected_category, click_data, selected_data):
         filtered_data = ms_df[ms_df["category"].isin(month_names)]
         category_labels = month_names  # Use the predefined order of months
         x_label = "Month"
+
 
     elif selected_category == "season":
         filtered_data = ms_df[ms_df["category"].isin(season_names)]
@@ -335,7 +337,6 @@ def generate_plot(plot_type, selected_category, click_data, selected_data):
     elif selected_category in ['bedrooms', 'beds', 'accommodates', 'bathrooms']:
         filtered_data = data[data['bedrooms'] != -1]
         category_labels = sorted(filtered_data[selected_category].unique())  # Unique bedroom counts sorted
-        print(category_labels)
         x_label = f"Number of {selected_category.title()}"
         violin_yaxis = [0, 6000]
 
@@ -346,10 +347,10 @@ def generate_plot(plot_type, selected_category, click_data, selected_data):
     if click_data or selected_data:
         key = 'id' if selected_category in ['bedrooms', 'beds', 'accommodates', 'bathrooms'] else 'listing_id'
         filtered_data = filtered_data[filtered_data[key].isin(listings_to_keep['id'])]
-
-    # Handle some values with very low counts depending on selected_category
-    #f selected_category in ['beds', 'accommodates', 'bathrooms']:
-    #    if
+    print(fake_data)
+    if selected_category == 'month' and fake_data != None:
+        if "true" in fake_data:
+            filtered_data = functions.apply_fake_data(filtered_data, selected_category)
 
     # Generate the plot based on plot type
     if plot_type == "violin":
@@ -395,6 +396,7 @@ def generate_plot(plot_type, selected_category, click_data, selected_data):
             ),
         )
     elif plot_type == "ridgeline":
+
         # Generate the ridgeline plot
         colors = n_colors(
             "rgb(5, 200, 200)", "rgb(200, 10, 10)", len(category_labels), colortype="rgb"
@@ -516,7 +518,6 @@ def generate_sunburst_pie(plot_type, click_data, selected_data):
     elif plot_type == "bar":
         # Aggregate data for a bar chart
         bar_data = data.groupby(["neighbourhood_cleansed", "room_type"]).size().reset_index(name='count')
-        print(bar_data)
         bar_data['neighbourhood_cleansed'] = bar_data['neighbourhood_cleansed'].replace({
             "Vesterbro-Kongens Enghave": "Vesterbro",
             "Brønshøj-Husum": "Brønshøj",

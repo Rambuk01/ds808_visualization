@@ -347,7 +347,6 @@ def generate_plot(plot_type, selected_category, click_data, selected_data, fake_
     if click_data or selected_data:
         key = 'id' if selected_category in ['bedrooms', 'beds', 'accommodates', 'bathrooms'] else 'listing_id'
         filtered_data = filtered_data[filtered_data[key].isin(listings_to_keep['id'])]
-    print(fake_data)
     if selected_category == 'month' and fake_data != None:
         if "true" in fake_data:
             filtered_data = functions.apply_fake_data(filtered_data, selected_category)
@@ -359,6 +358,11 @@ def generate_plot(plot_type, selected_category, click_data, selected_data, fake_
             violin_colors = "category" if selected_category in ["month", "season"] else (
                     "day_of_week" if selected_category == "day_of_week" else "bedrooms"
                 )
+            
+        if selected_category == "bedrooms":
+            print(f"Number of bedrooms with 6: {filtered_data[filtered_data['bedrooms'] == 6].count()}")
+            print(f"Number of bedrooms with 1: {filtered_data[filtered_data['bedrooms'] == 1].count()}")
+        # Efter min mening, bør vi klar få 12. VI får ikke under 10.
         x = "category" if selected_category in ["month", "season"] else selected_category
         # Generate the violin plot
         fig = px.violin(
